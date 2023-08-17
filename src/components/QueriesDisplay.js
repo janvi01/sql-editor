@@ -8,8 +8,10 @@ import {
   DrawerCloseButton,
   DrawerHeader,
   DrawerBody,
-  VStack,
+  Stack,
 } from "@chakra-ui/react";
+import { BsFillArrowRightCircleFill } from "react-icons/bs";
+import { AiOutlineBars } from "react-icons/ai";
 
 const QueriesDisplay = ({ usePredefinedQuery }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -17,11 +19,17 @@ const QueriesDisplay = ({ usePredefinedQuery }) => {
 
   const Queryonclick = (value) => {
     usePredefinedQuery(value);
+    onClose();
   };
 
   return (
     <>
-      <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>
+      <Button
+        leftIcon={<AiOutlineBars />}
+        ref={btnRef}
+        colorScheme="teal"
+        onClick={onOpen}
+      >
         Available Queries
       </Button>
       <Drawer
@@ -36,8 +44,9 @@ const QueriesDisplay = ({ usePredefinedQuery }) => {
           <DrawerHeader>Available Queries</DrawerHeader>
 
           <DrawerBody>
-            <VStack justifyContent={"left"}>
+            <Stack direction="column" spacing={4}>
               <Button
+                leftIcon={<BsFillArrowRightCircleFill />}
                 onClick={() => {
                   Queryonclick("select * from CUSTOMERS");
                 }}
@@ -45,6 +54,7 @@ const QueriesDisplay = ({ usePredefinedQuery }) => {
                 Customers
               </Button>
               <Button
+                leftIcon={<BsFillArrowRightCircleFill />}
                 onClick={() => {
                   Queryonclick("select * from PRODUCTS");
                 }}
@@ -52,13 +62,14 @@ const QueriesDisplay = ({ usePredefinedQuery }) => {
                 Products
               </Button>
               <Button
+                leftIcon={<BsFillArrowRightCircleFill />}
                 onClick={() => {
                   Queryonclick("select * from CATEGORIES");
                 }}
               >
                 Categories
               </Button>
-            </VStack>
+            </Stack>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

@@ -5,12 +5,21 @@ import "ace-builds/src-noconflict/theme-sqlserver";
 import "ace-builds/src-min-noconflict/ext-language_tools";
 import { HStack, Button } from "@chakra-ui/react";
 
-const SQLEditor = ({ query }) => {
+const SQLEditor = ({ query, setQuery, runQuery }) => {
   const [value, setValue] = useState(query);
 
   useEffect(() => {
     setValue(query);
   }, [query]);
+
+  const SubmitQuery = () => {
+    //runQuery to be defined
+    runQuery();
+  };
+
+  const ClearQuery = () => {
+    setValue("");
+  };
 
   return (
     <>
@@ -25,7 +34,7 @@ const SQLEditor = ({ query }) => {
         maxLines={10}
         showPrintMargin={false}
         showGutter
-        placeholder="Write query..."
+        placeholder="Write SQL query..."
         editorProps={{ $blockScrolling: true }}
         setOptions={{
           enableBasicAutocompletion: true,
@@ -37,8 +46,12 @@ const SQLEditor = ({ query }) => {
         showLineNumbers
       />
       <HStack>
-        <Button colorScheme="blue">Run Query</Button>
-        <Button colorScheme="gray">Clear</Button>
+        <Button colorScheme="blue" onClick={SubmitQuery}>
+          Run Query
+        </Button>
+        <Button colorScheme="gray" onClick={ClearQuery}>
+          Clear
+        </Button>
       </HStack>
     </>
   );
