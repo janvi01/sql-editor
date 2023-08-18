@@ -5,7 +5,7 @@ import "ace-builds/src-noconflict/theme-sqlserver";
 import "ace-builds/src-min-noconflict/ext-language_tools";
 import { HStack, Button } from "@chakra-ui/react";
 
-const SQLEditor = ({ query, setQuery, runQuery }) => {
+const Editor = ({ query, setQuery, runQuery }) => {
   const [value, setValue] = useState(query);
 
   useEffect(() => {
@@ -57,4 +57,4 @@ const SQLEditor = ({ query, setQuery, runQuery }) => {
   );
 };
 
-export default SQLEditor;
+export default Editor;
