@@ -7,6 +7,7 @@ import {
   TableCaption,
   Thead,
   Tbody,
+  Text,
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -17,28 +18,29 @@ const OutputTable = ({ data }) => {
   return (
     <>
       {data.length > 0 ? (
-        <div className="block max-h-[50vh] overflow-y-auto border border-gray-300">
-          <TableContainer>
-            <Table variant="simple">
-              <TableCaption>Resulting Query Table</TableCaption>
-              <Thead>
+        <TableContainer>
+          <Table variant="simple">
+            <TableCaption>Resulting Query Table</TableCaption>
+            <Thead>
+              <Tr>
+                {headerItems.map((item) => (
+                  <Th>{item}</Th>
+                ))}
+              </Tr>
+            </Thead>
+            <Tbody height={"50vh"} overflowY={"scroll"}>
+              {data.map((bodyitem) => (
                 <Tr>
-                  {headerItems.map((item) => (
-                    <Th>{item}</Th>
-                  ))}
+                  {headerItems.map((i) => {
+                    return <Td>{bodyitem[i]}</Td>;
+                  })}
                 </Tr>
-              </Thead>
-              <Tbody>
-                <Tr>
-                  <Td></Td>
-                </Tr>
-                <Tr></Tr>
-              </Tbody>
-            </Table>
-          </TableContainer>
-        </div>
+              ))}
+            </Tbody>
+          </Table>
+        </TableContainer>
       ) : (
-        <p>Write a query to see tabular results</p>
+        <Text>Write a query to see tabular results</Text>
       )}
     </>
   );

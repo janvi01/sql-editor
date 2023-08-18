@@ -3,6 +3,7 @@ import { categories } from "../assets/data/categories";
 import { customers } from "../assets/data/customers";
 import { products } from "../assets/data/products";
 import OutputTable from "./OutputTable";
+import { Text } from "@chakra-ui/react";
 
 const OutputDisplay = ({ submittedQuery }) => {
   const [results, setResults] = useState([]);
@@ -41,11 +42,9 @@ const OutputDisplay = ({ submittedQuery }) => {
   return (
     <>
       {results.length > 0 ? (
-        <div>
-          <OutputTable data={results} />
-        </div>
+        <OutputTable data={results} />
       ) : (
-        <p>Execute a query to see results</p>
+        <Text>Execute a query to see results</Text>
       )}
     </>
   );
