@@ -30,7 +30,7 @@ const QueriesDrawer = ({ usePredefinedQuery, displayText }) => {
         colorScheme="teal"
         onClick={onOpen}
       >
-        {displayText ? "Available Queries" : ""}
+        {displayText ? "Available Tables" : ""}
       </Button>
       <Drawer
         isOpen={isOpen}

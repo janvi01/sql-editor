@@ -6,7 +6,14 @@ import "ace-builds/src-min-noconflict/ext-language_tools";
 import { Box } from "@chakra-ui/react";
 import EditorControls from "./EditorControls";
 
-const Editor = ({ query, setQuery, runQuery, usePredefinedQuery }) => {
+const Editor = ({
+  query,
+  setQuery,
+  runQuery,
+  usePredefinedQuery,
+  history,
+  setHistory,
+}) => {
   const [value, setValue] = useState(query);
 
   useEffect(() => {
@@ -16,6 +23,7 @@ const Editor = ({ query, setQuery, runQuery, usePredefinedQuery }) => {
   const SubmitQuery = () => {
     //runQuery to be defined
     runQuery();
+    setHistory([...history, value]);
   };
 
   const ClearQuery = () => {
