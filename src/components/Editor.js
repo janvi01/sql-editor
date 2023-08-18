@@ -3,7 +3,7 @@ import AceEditor from "react-ace";
 import "ace-builds/src-min-noconflict/mode-mysql";
 import "ace-builds/src-noconflict/theme-sqlserver";
 import "ace-builds/src-min-noconflict/ext-language_tools";
-import { Box } from "@chakra-ui/react";
+import { Box, VStack } from "@chakra-ui/react";
 import EditorControls from "./EditorControls";
 
 const Editor = ({
@@ -31,13 +31,13 @@ const Editor = ({
   };
 
   return (
-    <>
+    <VStack w={"70%"}>
       <AceEditor
         mode="mysql"
         id="editor"
         name="editor"
         theme="sqlserver"
-        width="70%"
+        width="100%"
         fontSize={18}
         showPrintMargin={false}
         showGutter
@@ -54,14 +54,14 @@ const Editor = ({
         onChange={(value) => setValue(value)}
         showLineNumbers
       />
-      <Box width={"70%"} mt={2}>
+      <Box w={"100%"} mt={2}>
         <EditorControls
           SubmitQuery={SubmitQuery}
           ClearQuery={ClearQuery}
           usePredefinedQuery={usePredefinedQuery}
         />
       </Box>
-    </>
+    </VStack>
   );
 };
 

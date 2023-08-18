@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Editor from "./Editor";
-import { VStack } from "@chakra-ui/react";
+import { HStack, VStack } from "@chakra-ui/react";
 import OutputDisplay from "./OutputDisplay";
 import Navbar from "./Navbar";
 import QueryHistory from "./QueryHistory";
@@ -21,15 +21,17 @@ const FrontLayout = () => {
   return (
     <VStack bgColor={"blackAlpha.100"} spacing={8}>
       <Navbar usePredefinedQuery={usePredefinedQuery} />
-      <Editor
-        query={query}
-        setQuery={setQuery}
-        runQuery={runQuery}
-        usePredefinedQuery={usePredefinedQuery}
-        history={history}
-        setHistory={setHistory}
-      />
-      <QueryHistory history={history} />
+      <HStack w={"100%"} justifyContent={"space-between"} px={12}>
+        <Editor
+          query={query}
+          setQuery={setQuery}
+          runQuery={runQuery}
+          usePredefinedQuery={usePredefinedQuery}
+          history={history}
+          setHistory={setHistory}
+        />
+        <QueryHistory history={history} />
+      </HStack>
       <OutputDisplay submittedQuery={submittedQuery} />
     </VStack>
   );
