@@ -39,7 +39,7 @@ const QueriesDrawer = ({ usePredefinedQuery }) => {
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
-        <DrawerContent>
+        <DrawerContent bgColor="teal">
           <DrawerCloseButton />
           <DrawerHeader>Available Queries</DrawerHeader>
 

@@ -30,10 +30,10 @@ const SQLEditor = ({ query, setQuery, runQuery }) => {
         theme="sqlserver"
         width="70%"
         fontSize={18}
-        minLines={15}
-        maxLines={10}
         showPrintMargin={false}
         showGutter
+        minLines={15}
+        maxLines={10}
         placeholder="Write SQL query..."
         editorProps={{ $blockScrolling: true }}
         setOptions={{
