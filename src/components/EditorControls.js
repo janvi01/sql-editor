@@ -6,7 +6,10 @@ import { AiFillCaretRight } from "react-icons/ai";
 const EditorControls = ({ SubmitQuery, ClearQuery, usePredefinedQuery }) => {
   return (
     <HStack justifyContent="space-between">
-      <QueriesDrawer usePredefinedQuery={usePredefinedQuery} />
+      <QueriesDrawer
+        usePredefinedQuery={usePredefinedQuery}
+        displayText={true}
+      />
       <HStack>
         <Button
           leftIcon={<AiFillCaretRight />}

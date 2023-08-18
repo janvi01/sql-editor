@@ -13,7 +13,7 @@ import {
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { AiOutlineBars } from "react-icons/ai";
 
-const QueriesDrawer = ({ usePredefinedQuery }) => {
+const QueriesDrawer = ({ usePredefinedQuery, displayText }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
 
@@ -30,7 +30,7 @@ const QueriesDrawer = ({ usePredefinedQuery }) => {
         colorScheme="teal"
         onClick={onOpen}
       >
-        Available Queries
+        {displayText ? "Available Queries" : ""}
       </Button>
       <Drawer
         isOpen={isOpen}

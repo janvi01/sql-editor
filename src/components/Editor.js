@@ -3,7 +3,7 @@ import AceEditor from "react-ace";
 import "ace-builds/src-min-noconflict/mode-mysql";
 import "ace-builds/src-noconflict/theme-sqlserver";
 import "ace-builds/src-min-noconflict/ext-language_tools";
-import { HStack, Button, Box } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import EditorControls from "./EditorControls";
 
 const Editor = ({ query, setQuery, runQuery, usePredefinedQuery }) => {
