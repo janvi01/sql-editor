@@ -3,9 +3,10 @@ import AceEditor from "react-ace";
 import "ace-builds/src-min-noconflict/mode-mysql";
 import "ace-builds/src-noconflict/theme-sqlserver";
 import "ace-builds/src-min-noconflict/ext-language_tools";
-import { HStack, Button } from "@chakra-ui/react";
+import { HStack, Button, Box } from "@chakra-ui/react";
+import EditorControls from "./EditorControls";
 
-const Editor = ({ query, setQuery, runQuery }) => {
+const Editor = ({ query, setQuery, runQuery, usePredefinedQuery }) => {
   const [value, setValue] = useState(query);
 
   useEffect(() => {
@@ -45,14 +46,13 @@ const Editor = ({ query, setQuery, runQuery }) => {
         onChange={(value) => setValue(value)}
         showLineNumbers
       />
-      <HStack>
-        <Button colorScheme="blue" onClick={SubmitQuery}>
-          Run Query
-        </Button>
-        <Button colorScheme="gray" onClick={ClearQuery}>
-          Clear
-        </Button>
-      </HStack>
+      <Box width={"70%"} mt={2}>
+        <EditorControls
+          SubmitQuery={SubmitQuery}
+          ClearQuery={ClearQuery}
+          usePredefinedQuery={usePredefinedQuery}
+        />
+      </Box>
     </>
   );
 };
