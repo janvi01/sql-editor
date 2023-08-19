@@ -7,6 +7,7 @@ import QueryHistory from "./QueryHistory";
 
 const FrontLayout = () => {
   const [query, setQuery] = useState("");
+  const [value, setValue] = useState(query);
   const [submittedQuery, setSubmittedQuery] = useState("");
   const [history, setHistory] = useState([]);
 
@@ -22,6 +23,7 @@ const FrontLayout = () => {
     <VStack bgColor={"blackAlpha.100"} spacing={8}>
       <Navbar usePredefinedQuery={usePredefinedQuery} />
       <HStack w={"100%"} justifyContent={"space-between"} px={12}>
+        <QueryHistory history={history} value={value} setValue={setValue} />
         <Editor
           query={query}
           setQuery={setQuery}
@@ -29,8 +31,9 @@ const FrontLayout = () => {
           usePredefinedQuery={usePredefinedQuery}
           history={history}
           setHistory={setHistory}
+          value={value}
+          setValue={setValue}
         />
-        <QueryHistory history={history} />
       </HStack>
       <OutputDisplay submittedQuery={submittedQuery} />
     </VStack>

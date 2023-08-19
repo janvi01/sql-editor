@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import AceEditor from "react-ace";
 import "ace-builds/src-min-noconflict/mode-mysql";
 import "ace-builds/src-noconflict/theme-sqlserver";
@@ -13,8 +13,12 @@ const Editor = ({
   usePredefinedQuery,
   history,
   setHistory,
+  value,
+  setValue,
 }) => {
-  const [value, setValue] = useState(query);
+  const onChange = (newValue) => {
+    setValue(newValue);
+  };
 
   useEffect(() => {
     setValue(query);
@@ -51,7 +55,7 @@ const Editor = ({
           enableSnippets: true,
         }}
         value={value}
-        onChange={(value) => setValue(value)}
+        onChange={onChange}
         showLineNumbers
       />
       <Box w={"100%"} mt={2}>

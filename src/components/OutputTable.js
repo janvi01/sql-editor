@@ -15,7 +15,6 @@ import React from "react";
 const OutputTable = ({ data }) => {
   const headerItems = Object.keys(data[0]);
 
-  console.log(data);
   return (
     <>
       {data.length > 0 ? (
