@@ -22,7 +22,7 @@ import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { AiOutlineBars } from "react-icons/ai";
 import { queryMap } from "../assets/data/queries";
 
-const QueriesDrawer = ({ usePredefinedQuery, displayText }) => {
+const QueriesDrawer = ({ usePredefinedQuery, displayText, setValue }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
 
@@ -78,7 +78,13 @@ const QueriesDrawer = ({ usePredefinedQuery, displayText }) => {
                         cursor={"pointer"}
                         _hover={{ bg: "blackAlpha.100" }}
                         onClick={() => {
-                          Queryonclick(items.query);
+                          setValue(
+                            "select " +
+                              tablefieldData +
+                              " from " +
+                              items.tableQuery
+                          );
+                          onClose();
                         }}
                       >
                         {tablefieldData}

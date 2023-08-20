@@ -3,12 +3,18 @@ import { HStack, Button } from "@chakra-ui/react";
 import QueriesDrawer from "./QueriesDrawer";
 import { AiFillCaretRight } from "react-icons/ai";
 
-const EditorControls = ({ SubmitQuery, ClearQuery, usePredefinedQuery }) => {
+const EditorControls = ({
+  SubmitQuery,
+  ClearQuery,
+  usePredefinedQuery,
+  setValue,
+}) => {
   return (
     <HStack justifyContent="space-between">
       <QueriesDrawer
         usePredefinedQuery={usePredefinedQuery}
         displayText={true}
+        setValue={setValue}
       />
       <HStack>
         <Button

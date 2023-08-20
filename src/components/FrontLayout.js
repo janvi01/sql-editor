@@ -16,12 +16,12 @@ const FrontLayout = () => {
   };
 
   const runQuery = () => {
-    setSubmittedQuery(value);
+    setSubmittedQuery(query);
   };
 
   return (
     <VStack bgColor={"blackAlpha.100"} spacing={8}>
-      <Navbar usePredefinedQuery={usePredefinedQuery} />
+      <Navbar usePredefinedQuery={usePredefinedQuery} setValue={setValue} />
       <HStack w={"100%"} justifyContent={"space-between"} pl={12} pr={8}>
         <QueryHistory history={history} value={value} setValue={setValue} />
         <Editor

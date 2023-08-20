@@ -3,7 +3,7 @@ import React from "react";
 import QueriesDrawer from "./QueriesDrawer";
 import { BsGithub } from "react-icons/bs";
 
-function Navbar({ usePredefinedQuery }) {
+function Navbar({ usePredefinedQuery, setValue }) {
   return (
     <HStack
       bgColor={"teal"}
@@ -14,6 +14,7 @@ function Navbar({ usePredefinedQuery }) {
       <QueriesDrawer
         usePredefinedQuery={usePredefinedQuery}
         displayText={false}
+        setValue={setValue}
       />
       <Heading> SQL Online Editor</Heading>
       <Icon as={BsGithub} />

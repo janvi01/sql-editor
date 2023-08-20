@@ -69,6 +69,7 @@ const Editor = ({
           SubmitQuery={value ? SubmitQuery : errorQuery}
           ClearQuery={ClearQuery}
           usePredefinedQuery={usePredefinedQuery}
+          setValue={setValue}
         />
       </Box>
     </VStack>
