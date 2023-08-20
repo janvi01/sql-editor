@@ -1,3 +1,7 @@
+import { customers } from "./customers";
+import { categories } from "./categories";
+import { products } from "./products";
+
 export const queryMap = [
   {
     tableQuery: "Customers",
@@ -15,13 +19,13 @@ export const queryMap = [
       "phone",
       "fax",
     ],
-    // data: customers,
+    data: customers,
   },
   {
     tableQuery: "Categories",
     query: "select * from CATEGORIES",
     tableFields: ["categoryID", "categoryName", "description", "picture"],
-    // data: categories,
+    data: categories,
   },
   {
     tableQuery: "Products",
@@ -38,6 +42,6 @@ export const queryMap = [
       "reorderLevel",
       "discontinued",
     ],
-    // data: products,
+    data: products,
   },
 ];

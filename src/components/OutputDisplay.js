@@ -1,26 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { categories } from "../assets/data/categories";
-import { customers } from "../assets/data/customers";
-import { products } from "../assets/data/products";
 import OutputTable from "./OutputTable";
 import { Text } from "@chakra-ui/react";
+import { queryMap } from "../assets/data/queries";
 
 const OutputDisplay = ({ submittedQuery }) => {
   const [results, setResults] = useState([]);
-  const queryMap = [
-    {
-      query: "select * from CUSTOMERS",
-      data: customers,
-    },
-    {
-      query: "select * from CATEGORIES",
-      data: categories,
-    },
-    {
-      query: "select * from PRODUCTS",
-      data: products,
-    },
-  ];
 
   useEffect(() => {
     selectResults();
@@ -44,7 +28,7 @@ const OutputDisplay = ({ submittedQuery }) => {
       {results.length > 0 ? (
         <OutputTable data={results} />
       ) : (
-        <Text>Execute a query to see results</Text>
+        <Text>Write a query to see results</Text>
       )}
     </>
   );
