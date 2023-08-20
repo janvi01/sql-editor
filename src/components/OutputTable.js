@@ -8,7 +8,6 @@ import {
   Thead,
   Tbody,
   Text,
-  Heading,
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -18,9 +17,8 @@ const OutputTable = ({ data }) => {
   return (
     <>
       {data.length > 0 ? (
-        <Box padding={4} width={"100%"}>
-          <Heading textAlign={"center"}>Resulting Query Table</Heading>
-          <Box overflowY="auto" overflowX="auto" maxH="50vh" maxW="100%" m={4}>
+        <Box px={4} width={"100%"}>
+          <Box overflowY="auto" overflowX="auto" maxH="50vh" maxW="100%" mx={4}>
             <Table variant="simple">
               <TableCaption>Resulting Query Table</TableCaption>
               <Thead position="sticky" top={0} zIndex="docked" bgColor="teal">
