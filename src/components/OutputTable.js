@@ -25,18 +25,18 @@ const OutputTable = ({ data }) => {
               <TableCaption>Resulting Query Table</TableCaption>
               <Thead position="sticky" top={0} zIndex="docked" bgColor="teal">
                 <Tr>
-                  {headerItems.map((item) => (
-                    <Th fontWeight="extrabold" color="white">
+                  {headerItems.map((item, key) => (
+                    <Th fontWeight="extrabold" color="white" key={key}>
                       {item}
                     </Th>
                   ))}
                 </Tr>
               </Thead>
               <Tbody height={"50vh"} overflowY={"scroll"}>
-                {data.map((bodyitem) => (
-                  <Tr>
-                    {headerItems.map((i) => {
-                      return <Td>{bodyitem[i]}</Td>;
+                {data.map((bodyitem, key) => (
+                  <Tr key={key}>
+                    {headerItems.map((i, key) => {
+                      return <Td key={key}>{bodyitem[i]}</Td>;
                     })}
                   </Tr>
                 ))}

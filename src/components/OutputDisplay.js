@@ -24,7 +24,7 @@ const OutputDisplay = ({ submittedQuery }) => {
 
   useEffect(() => {
     selectResults();
-  });
+  }, [submittedQuery]);
 
   const selectResults = () => {
     if (submittedQuery === "") {

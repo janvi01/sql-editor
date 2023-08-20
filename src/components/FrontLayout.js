@@ -16,7 +16,7 @@ const FrontLayout = () => {
   };
 
   const runQuery = () => {
-    setSubmittedQuery(query);
+    setSubmittedQuery(value);
   };
 
   return (
@@ -30,6 +30,7 @@ const FrontLayout = () => {
           runQuery={runQuery}
           usePredefinedQuery={usePredefinedQuery}
           history={history}
+          setSubmittedQuery={setSubmittedQuery}
           setHistory={setHistory}
           value={value}
           setValue={setValue}

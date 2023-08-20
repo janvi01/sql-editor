@@ -15,6 +15,7 @@ const Editor = ({
   setHistory,
   value,
   setValue,
+  setSubmittedQuery,
 }) => {
   const onChange = (newValue) => {
     setValue(newValue);
@@ -25,13 +26,14 @@ const Editor = ({
   }, [query]);
 
   const SubmitQuery = () => {
-    //runQuery to be defined
     runQuery();
     setHistory([...history, value]);
   };
 
   const ClearQuery = () => {
     setValue("");
+    setSubmittedQuery("");
+    setQuery("");
   };
 
   return (
