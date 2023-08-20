@@ -30,6 +30,10 @@ const Editor = ({
     setHistory([...history, value]);
   };
 
+  const errorQuery = () => {
+    alert("Enter a valid Query");
+  };
+
   const ClearQuery = () => {
     setValue("");
     setSubmittedQuery("");
@@ -62,7 +66,7 @@ const Editor = ({
       />
       <Box w={"100%"} mt={2}>
         <EditorControls
-          SubmitQuery={SubmitQuery}
+          SubmitQuery={value ? SubmitQuery : errorQuery}
           ClearQuery={ClearQuery}
           usePredefinedQuery={usePredefinedQuery}
         />

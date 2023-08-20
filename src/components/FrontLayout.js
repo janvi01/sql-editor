@@ -22,7 +22,7 @@ const FrontLayout = () => {
   return (
     <VStack bgColor={"blackAlpha.100"} spacing={8}>
       <Navbar usePredefinedQuery={usePredefinedQuery} />
-      <HStack w={"100%"} justifyContent={"space-between"} px={12}>
+      <HStack w={"100%"} justifyContent={"space-between"} pl={12} pr={8}>
         <QueryHistory history={history} value={value} setValue={setValue} />
         <Editor
           query={query}
