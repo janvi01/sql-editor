@@ -1,10 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AceEditor from "react-ace";
 import "ace-builds/src-min-noconflict/mode-mysql";
-import "ace-builds/src-noconflict/theme-sqlserver";
 import "ace-builds/src-min-noconflict/ext-language_tools";
 import { Box, VStack } from "@chakra-ui/react";
 import EditorControls from "./EditorControls";
+import EditorTheme from "./EditorTheme";
+//theme dependencies
+import "ace-builds/src-noconflict/theme-sqlserver";
+import "ace-builds/src-noconflict/theme-github";
+import "ace-builds/src-noconflict/theme-tomorrow";
+import "ace-builds/src-noconflict/theme-xcode";
+import "ace-builds/src-noconflict/theme-monokai";
+import "ace-builds/src-noconflict/theme-ambiance";
+import "ace-builds/src-noconflict/theme-chaos";
+import "ace-builds/src-noconflict/theme-chrome";
+import "ace-builds/src-noconflict/theme-clouds";
+import "ace-builds/src-noconflict/theme-cobalt";
+import "ace-builds/src-noconflict/theme-solarized_dark";
+import "ace-builds/src-noconflict/theme-terminal";
+import "ace-builds/src-noconflict/theme-solarized_light";
 
 const Editor = ({
   query,
@@ -17,6 +31,8 @@ const Editor = ({
   setValue,
   setSubmittedQuery,
 }) => {
+  const [theme, setTheme] = useState("sqlserver");
+
   const onChange = (newValue) => {
     setValue(newValue);
   };
@@ -42,13 +58,14 @@ const Editor = ({
 
   return (
     <VStack w={"70%"}>
+      <EditorTheme setTheme={setTheme} />
       <AceEditor
         mode="mysql"
         id="editor"
         name="editor"
-        theme="sqlserver"
+        theme={theme}
         width="100%"
-        fontSize={18}
+        fontSize={20}
         showPrintMargin={false}
         showGutter
         minLines={15}
