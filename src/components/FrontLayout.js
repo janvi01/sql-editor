@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, Suspense, lazy } from "react";
 import Editor from "./Editor";
 import { HStack, VStack } from "@chakra-ui/react";
-import OutputDisplay from "./OutputDisplay";
 import Navbar from "./Navbar";
 import QueryHistory from "./QueryHistory";
+
+const OutputDisplay = lazy(() => import("./OutputDisplay"));
 
 const FrontLayout = () => {
   const [query, setQuery] = useState("");
@@ -41,7 +42,10 @@ const FrontLayout = () => {
           setValue={setValue}
         />
       </HStack>
-      <OutputDisplay submittedQuery={submittedQuery} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <OutputDisplay submittedQuery={submittedQuery} />
+      </Suspense>
+      {/* <OutputDisplay submittedQuery={submittedQuery} /> */}
     </VStack>
   );
 };

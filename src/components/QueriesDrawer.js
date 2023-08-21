@@ -33,7 +33,7 @@ const QueriesDrawer = ({ usePredefinedQuery, displayText, setValue }) => {
   return (
     <>
       <Button
-        aria-label="tables drawer"
+        aria-label="Available Tables"
         leftIcon={<AiOutlineBars />}
         ref={btnRef}
         colorScheme="teal"
