@@ -3,7 +3,7 @@ import { HStack, Button } from "@chakra-ui/react";
 import QueriesDrawer from "./QueriesDrawer";
 import { AiFillCaretRight } from "react-icons/ai";
 
-const EditorControls = ({
+const EditorBottomControls = ({
   SubmitQuery,
   ClearQuery,
   usePredefinedQuery,
@@ -32,4 +32,4 @@ const EditorControls = ({
   );
 };
 
-export default EditorControls;
+export default EditorBottomControls;

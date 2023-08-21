@@ -3,8 +3,6 @@ import AceEditor from "react-ace";
 import "ace-builds/src-min-noconflict/mode-mysql";
 import "ace-builds/src-min-noconflict/ext-language_tools";
 import { Box, VStack } from "@chakra-ui/react";
-import EditorControls from "./EditorControls";
-import EditorTheme from "./EditorTheme";
 //theme dependencies
 import "ace-builds/src-noconflict/theme-sqlserver";
 import "ace-builds/src-noconflict/theme-github";
@@ -19,6 +17,8 @@ import "ace-builds/src-noconflict/theme-cobalt";
 import "ace-builds/src-noconflict/theme-solarized_dark";
 import "ace-builds/src-noconflict/theme-terminal";
 import "ace-builds/src-noconflict/theme-solarized_light";
+import EditorTopControls from "./EditorTopControls";
+import EditorBottomControls from "./EditorBottomControls";
 
 const Editor = ({
   query,
@@ -32,6 +32,8 @@ const Editor = ({
   setSubmittedQuery,
 }) => {
   const [theme, setTheme] = useState("sqlserver");
+  const [width, setWidth] = useState("70%");
+  const [maxLines, setMaxLines] = useState(10);
 
   const onChange = (newValue) => {
     setValue(newValue);
@@ -57,8 +59,12 @@ const Editor = ({
   };
 
   return (
-    <VStack w={"70%"}>
-      <EditorTheme setTheme={setTheme} />
+    <VStack w={width}>
+      <EditorTopControls
+        setTheme={setTheme}
+        setWidth={setWidth}
+        setMaxLines={setMaxLines}
+      />
       <AceEditor
         mode="mysql"
         id="editor"
@@ -69,7 +75,7 @@ const Editor = ({
         showPrintMargin={false}
         showGutter
         minLines={15}
-        maxLines={10}
+        maxLines={maxLines}
         placeholder="Write SQL query..."
         editorProps={{ $blockScrolling: true }}
         setOptions={{
@@ -82,7 +88,7 @@ const Editor = ({
         showLineNumbers
       />
       <Box w={"100%"} mt={2}>
-        <EditorControls
+        <EditorBottomControls
           SubmitQuery={value ? SubmitQuery : errorQuery}
           ClearQuery={ClearQuery}
           usePredefinedQuery={usePredefinedQuery}
