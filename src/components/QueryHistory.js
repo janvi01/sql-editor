@@ -1,7 +1,11 @@
 import { ListItem, ListIcon, List, Box, Heading } from "@chakra-ui/react";
 import { BsCodeSquare } from "react-icons/bs";
 
-function QueryHistory({ history, setValue }) {
+function QueryHistory({ history, setQuery, setValue }) {
+  const onClickHistory = (value) => {
+    if (value.includes("*")) setQuery(value);
+    setValue(value);
+  };
   return (
     <Box
       w={"20%"}
@@ -12,7 +16,7 @@ function QueryHistory({ history, setValue }) {
       textAlign={"center"}
       mt={"-10"}
     >
-      <Heading fontSize={"xl"} m={4}>
+      <Heading fontSize={"2xl"} m={2}>
         Queries History
       </Heading>
       {history.length > 0 ? (
@@ -22,7 +26,7 @@ function QueryHistory({ history, setValue }) {
               bgColor={"teal.200"}
               p={3}
               borderRadius={"5px"}
-              onClick={() => setValue(item)}
+              onClick={() => onClickHistory(item)}
               key={`${item}---${id}`}
               cursor={"pointer"}
               _hover={{ bg: "teal.500" }}
@@ -33,7 +37,7 @@ function QueryHistory({ history, setValue }) {
           ))}
         </List>
       ) : (
-        "No Query History to show"
+        "Execute a query first"
       )}
     </Box>
   );

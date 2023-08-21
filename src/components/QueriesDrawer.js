@@ -54,8 +54,8 @@ const QueriesDrawer = ({ usePredefinedQuery, displayText, setValue }) => {
           <DrawerBody>
             <Stack direction="column" spacing={4}>
               <Accordion allowToggle>
-                {queryMap.map((items) => (
-                  <AccordionItem py={2} border="none">
+                {queryMap.map((items, key) => (
+                  <AccordionItem py={2} border="none" key={key}>
                     <h2>
                       <AccordionButton
                         onClick={() => {
@@ -70,8 +70,9 @@ const QueriesDrawer = ({ usePredefinedQuery, displayText, setValue }) => {
                         </HStack>
                       </AccordionButton>
                     </h2>
-                    {items.tableFields.map((tablefieldData) => (
+                    {items.tableFields.map((tablefieldData, key) => (
                       <AccordionPanel
+                        key={key}
                         bgColor={"blackAlpha.300"}
                         fontWeight="bold"
                         pb={2}

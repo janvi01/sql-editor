@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import OutputTable from "./OutputTable";
-import { Text, Button, HStack, Heading } from "@chakra-ui/react";
+import { Button, HStack, Heading } from "@chakra-ui/react";
 import { queryMap } from "../assets/data/queries";
 import CsvDownload from "react-json-to-csv";
 import { BsFillFileEarmarkArrowDownFill } from "react-icons/bs";
@@ -11,6 +11,7 @@ const OutputDisplay = ({ submittedQuery }) => {
 
   useEffect(() => {
     selectResults();
+    // eslint-disable-next-line
   }, [submittedQuery]);
 
   const selectResults = () => {
@@ -32,7 +33,7 @@ const OutputDisplay = ({ submittedQuery }) => {
       {results.length > 0 ? (
         <>
           <HStack w={"100%"} px={8} justifyContent={"space-between"}>
-            <Heading textAlign={"center"}>Resulting Query Table</Heading>
+            <Heading textAlign={"center"}>Query Output</Heading>
             <CsvDownload data={results} filename={`${filename}.csv`}>
               <Button
                 leftIcon={<BsFillFileEarmarkArrowDownFill />}
@@ -45,7 +46,9 @@ const OutputDisplay = ({ submittedQuery }) => {
           <OutputTable data={results} />
         </>
       ) : (
-        <Text>Write a query to see results</Text>
+        <Heading fontSize={"xl"} m={4}>
+          Nothing to show at the moment
+        </Heading>
       )}
     </>
   );

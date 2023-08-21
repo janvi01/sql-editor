@@ -1,4 +1,4 @@
-import { HStack, Heading, Icon } from "@chakra-ui/react";
+import { HStack, Heading, IconButton } from "@chakra-ui/react";
 import React from "react";
 import QueriesDrawer from "./QueriesDrawer";
 import { BsGithub } from "react-icons/bs";
@@ -17,7 +17,13 @@ function Navbar({ usePredefinedQuery, setValue }) {
         setValue={setValue}
       />
       <Heading> SQL Online Editor</Heading>
-      <Icon as={BsGithub} />
+      <IconButton
+        as={"a"}
+        href="https://github.com/janvi01/sql-editor"
+        target="_blank"
+        aria-label="Github Link"
+        icon={<BsGithub />}
+      />
     </HStack>
   );
 }
