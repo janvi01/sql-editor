@@ -1,6 +1,6 @@
 import { Text, HStack, Select, IconButton } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { BsArrowsFullscreen } from "react-icons/bs";
+import { BsArrowsFullscreen, BsFullscreenExit } from "react-icons/bs";
 
 function EditorTopControls({ setTheme, setWidth, setMaxLines }) {
   const themes = [
@@ -31,7 +31,8 @@ function EditorTopControls({ setTheme, setWidth, setMaxLines }) {
   return (
     <HStack w={"100%"} justifyContent={"space-between"} mb={2}>
       <IconButton
-        icon={<BsArrowsFullscreen />}
+        aria-label="Fullscreen"
+        icon={fullscreenBool ? <BsArrowsFullscreen /> : <BsFullscreenExit />}
         onClick={() => {
           fullscreen(fullscreenBool);
           setfullscreenBool(!fullscreenBool);
@@ -40,6 +41,7 @@ function EditorTopControls({ setTheme, setWidth, setMaxLines }) {
       <HStack>
         <Text fontWeight={"bold"}>Theme</Text>
         <Select
+          aria-label="Theme options"
           onChange={(e) => {
             setTheme(e.currentTarget.value);
           }}

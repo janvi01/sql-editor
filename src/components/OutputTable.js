@@ -19,7 +19,7 @@ const OutputTable = ({ data }) => {
       {data.length > 0 ? (
         <Box px={4} width={"100%"}>
           <Box overflowY="auto" overflowX="auto" maxH="50vh" maxW="100%" mx={4}>
-            <Table variant="simple">
+            <Table variant="striped">
               <TableCaption>Resulting Query Table</TableCaption>
               <Thead position="sticky" top={0} zIndex="docked" bgColor="teal">
                 <Tr>

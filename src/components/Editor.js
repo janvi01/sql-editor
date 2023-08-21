@@ -3,7 +3,7 @@ import AceEditor from "react-ace";
 import "ace-builds/src-min-noconflict/mode-mysql";
 import "ace-builds/src-min-noconflict/ext-language_tools";
 import { Box, VStack } from "@chakra-ui/react";
-//theme dependencies
+//react ace editor theme dependencies
 import "ace-builds/src-noconflict/theme-sqlserver";
 import "ace-builds/src-noconflict/theme-github";
 import "ace-builds/src-noconflict/theme-tomorrow";
@@ -41,7 +41,7 @@ const Editor = ({
 
   useEffect(() => {
     setValue(query);
-  }, [query]);
+  }, [query, setValue]);
 
   const SubmitQuery = () => {
     runQuery();
@@ -68,6 +68,7 @@ const Editor = ({
       <AceEditor
         mode="mysql"
         id="editor"
+        aria-label="editor"
         name="editor"
         theme={theme}
         width="100%"
@@ -77,6 +78,7 @@ const Editor = ({
         minLines={15}
         maxLines={maxLines}
         placeholder="Write SQL query..."
+        color="black"
         editorProps={{ $blockScrolling: true }}
         setOptions={{
           enableBasicAutocompletion: true,
