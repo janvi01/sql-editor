@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# SQL Online Editor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**SQL Online Editor** aims to provide users with a seamless and user-friendly platform for executing SQL queries, displaying query results in a table, maintaining a query history log, and supporting the export of results in CSV formats. The application will also provide a list of themes to change the editor UI and available tables in the sidebar for easy reference.
 
-## Available Scripts
+### Live : [https://sql-editor-online.vercel.app/](https://sql-editor-online.vercel.app/)
 
-In the project directory, you can run:
+### Project Overview
 
-### `npm start`
+![Project Overview](./src/assets/screenshots/overview.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Key Features 📌
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **SQL Query Execution**: The application will allow users to input custom SQL queries and execute them against the connected database.
 
-### `npm test`
+- **Result Tabular Display**: The application will present query results in a tabular format with a smooth scroll. This ensures that large datasets are easily navigable, enhancing the user experience.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Query History**: The application will maintain a history log of all executed queries. Users can revisit previous queries, and re-run them as needed.
 
-### `npm run build`
+- **Export Data**: Users will have the option to download query results in CSV format.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **List of Available Tables**: The application's sidebar will display a list of available tables in the connected database.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Change Editor Theme and Size**: The user can change the theme of the Editor by selecting the option from the dropdown and expanding or shrinking the editor size.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Techstack used 🛠️
 
-### `npm run eject`
+Following technologies and libraries are used for the development of this
+project.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [React](https://react.dev/)
+- [React Ace](https://github.com/securingsincity/react-ace)
+- [Chakra UI](https://chakra-ui.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [React-json-to-csv](https://github.com/coston/react-json-to-csv)
+- [Prettier](https://prettier.io/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Demo Screenshots
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Query History](./src/assets/screenshots/editor1.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![Available tables](./src/assets/screenshots/editor2.png)
 
-## Learn More
+![Changed Theme](./src/assets/screenshots/editor3.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Performance
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+(Performance using [PageSpeed Insights](https://pagespeed.web.dev/))
 
-### Code Splitting
+![Pagespeed](./src/assets/screenshots/Performance1.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+(Performance using Chrome Devtools LightHouse)
 
-### Analyzing the Bundle Size
+![Chrome Lighthouse](./src/assets/screenshots/Performance2.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Optimisation
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Lazy loaded output display.
+- No errors logs to console.
+- Used vercel for hosting.
