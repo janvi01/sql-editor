@@ -1,7 +1,16 @@
-import { ListItem, ListIcon, List, Box, Heading } from "@chakra-ui/react";
+import {
+  ListItem,
+  ListIcon,
+  List,
+  Box,
+  Heading,
+  HStack,
+  IconButton,
+} from "@chakra-ui/react";
 import { BsCodeSquare } from "react-icons/bs";
+import { MdDelete } from "react-icons/md";
 
-function QueryHistory({ history, setQuery, setValue }) {
+function QueryHistory({ history, setQuery, setValue, setHistory }) {
   const onClickHistory = (value) => {
     if (value.includes("*")) setQuery(value);
     setValue(value);
@@ -9,16 +18,23 @@ function QueryHistory({ history, setQuery, setValue }) {
   return (
     <Box
       w={"20%"}
-      bgColor={"white"}
+      bgColor={"whiteAlpha.500"}
       p={2}
       borderRadius={"5px"}
       minH={"20vh"}
       textAlign={"center"}
-      mt={"-10"}
+      boxShadow={"rgba(0, 0, 0, 0.35) 0px 5px 15px"}
     >
-      <Heading fontSize={"2xl"} m={2}>
-        Queries History
-      </Heading>
+      <HStack justifyContent={"space-between"}>
+        <Heading fontSize={"2xl"} m={2}>
+          Queries History
+        </Heading>
+        <IconButton
+          icon={<MdDelete />}
+          aria-label="Delete"
+          onClick={() => setHistory([])}
+        ></IconButton>
+      </HStack>
       {history.length > 0 ? (
         <List spacing={3} p={2}>
           {history.map((item, id) => (

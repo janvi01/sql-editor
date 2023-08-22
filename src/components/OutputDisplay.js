@@ -32,7 +32,7 @@ const OutputDisplay = ({ submittedQuery }) => {
     <>
       {results.length > 0 ? (
         <>
-          <HStack w={"100%"} px={8} justifyContent={"space-between"}>
+          <HStack w={"100%"} px={4} justifyContent={"space-between"}>
             <Heading textAlign={"center"}>Query Output</Heading>
             <CsvDownload data={results} filename={`${filename}.csv`}>
               <Button

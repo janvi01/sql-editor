@@ -1,6 +1,7 @@
 import { customers } from "./customers";
 import { categories } from "./categories";
 import { products } from "./products";
+import { suppliers } from "./suppliers";
 
 export const queryMap = [
   {
@@ -43,5 +44,24 @@ export const queryMap = [
       "discontinued",
     ],
     data: products,
+  },
+  {
+    tableQuery: "Suppliers",
+    query: "select * from SUPPLIERS",
+    tableFields: [
+      "supplierID",
+      "companyName",
+      "contactName",
+      "contactTitle",
+      "address",
+      "city",
+      "region",
+      "postalCode",
+      "country",
+      "phone",
+      "fax",
+      "homePage",
+    ],
+    data: suppliers,
   },
 ];
