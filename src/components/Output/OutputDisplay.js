@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import OutputTable from "./OutputTable";
 import { Button, HStack, Heading } from "@chakra-ui/react";
-import { queryMap } from "../assets/data/queries";
+import { queryMap } from "../../assets/data/queries";
 import CsvDownload from "react-json-to-csv";
 import { BsFillFileEarmarkArrowDownFill } from "react-icons/bs";
 

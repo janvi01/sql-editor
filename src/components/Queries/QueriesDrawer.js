@@ -20,7 +20,7 @@ import {
 } from "@chakra-ui/react";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { AiOutlineBars } from "react-icons/ai";
-import { queryMap } from "../assets/data/queries";
+import { queryMap } from "../../assets/data/queries";
 
 const QueriesDrawer = ({ usePredefinedQuery, displayText, setValue }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();

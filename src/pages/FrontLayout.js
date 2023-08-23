@@ -1,13 +1,13 @@
 import React, { useState, Suspense, lazy } from "react";
-import Editor from "./Editor";
+import Editor from "../components/Editor/Editor";
 import { HStack, VStack } from "@chakra-ui/react";
-import Navbar from "./Navbar";
-import QueryHistory from "./QueryHistory";
+import Navbar from "../components/Navbar/Navbar";
+import QueryHistory from "../components/Queries/QueryHistory";
 
-const OutputDisplay = lazy(() => import("./OutputDisplay"));
+const OutputDisplay = lazy(() => import("../components/Output/OutputDisplay"));
 
 const FrontLayout = () => {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("select * from CUSTOMERS");
   const [value, setValue] = useState(query);
   const [submittedQuery, setSubmittedQuery] = useState("");
   const [history, setHistory] = useState([]);

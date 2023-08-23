@@ -1,6 +1,6 @@
 import { HStack, Heading, IconButton } from "@chakra-ui/react";
 import React from "react";
-import QueriesDrawer from "./QueriesDrawer";
+import QueriesDrawer from "../Queries/QueriesDrawer";
 import { BsGithub } from "react-icons/bs";
 
 function Navbar({ usePredefinedQuery, setValue }) {

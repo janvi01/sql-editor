@@ -1,6 +1,6 @@
 import React from "react";
 import { HStack, Button } from "@chakra-ui/react";
-import QueriesDrawer from "./QueriesDrawer";
+import QueriesDrawer from "../Queries/QueriesDrawer";
 import { AiFillCaretRight } from "react-icons/ai";
 
 const EditorBottomControls = ({

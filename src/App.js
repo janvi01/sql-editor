@@ -1,5 +1,5 @@
 import React from "react";
-import FrontLayout from "./components/FrontLayout";
+import FrontLayout from "./pages/FrontLayout";
 import { Box } from "@chakra-ui/react";
 
 function App() {
