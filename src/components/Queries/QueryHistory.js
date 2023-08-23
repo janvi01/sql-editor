@@ -17,7 +17,7 @@ function QueryHistory({ history, setQuery, setValue, setHistory }) {
   };
   return (
     <Box
-      w={"20%"}
+      w={["100%", "20%"]}
       bgColor={"whiteAlpha.500"}
       p={2}
       borderRadius={"5px"}

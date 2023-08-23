@@ -1,6 +1,6 @@
 import React, { useState, Suspense, lazy } from "react";
 import Editor from "../components/Editor/Editor";
-import { HStack, VStack } from "@chakra-ui/react";
+import { Stack, VStack } from "@chakra-ui/react";
 import Navbar from "../components/Navbar/Navbar";
 import QueryHistory from "../components/Queries/QueryHistory";
 
@@ -23,7 +23,13 @@ const FrontLayout = () => {
   return (
     <VStack bgColor={"blackAlpha.300"} spacing={8} pb={12}>
       <Navbar usePredefinedQuery={usePredefinedQuery} setValue={setValue} />
-      <HStack w={"100%"} justifyContent={"space-between"} pr={4} pl={8}>
+      <Stack
+        direction={["column", "row"]}
+        w={"100%"}
+        justifyContent={"space-between"}
+        px={4}
+        spacing={8}
+      >
         <QueryHistory
           history={history}
           setHistory={setHistory}
@@ -42,11 +48,10 @@ const FrontLayout = () => {
           value={value}
           setValue={setValue}
         />
-      </HStack>
+      </Stack>
       <Suspense fallback={<div>Loading...</div>}>
         <OutputDisplay submittedQuery={submittedQuery} />
       </Suspense>
-      {/* <OutputDisplay submittedQuery={submittedQuery} /> */}
     </VStack>
   );
 };

@@ -59,7 +59,7 @@ const Editor = ({
   };
 
   return (
-    <VStack w={width}>
+    <VStack w={{ base: "100%", md: width, lg: width }}>
       <EditorTopControls
         setTheme={setTheme}
         setWidth={setWidth}
@@ -89,14 +89,12 @@ const Editor = ({
         onChange={onChange}
         showLineNumbers
       />
-      <Box w={"100%"} mt={2}>
-        <EditorBottomControls
-          SubmitQuery={value ? SubmitQuery : errorQuery}
-          ClearQuery={ClearQuery}
-          usePredefinedQuery={usePredefinedQuery}
-          setValue={setValue}
-        />
-      </Box>
+      <EditorBottomControls
+        SubmitQuery={value ? SubmitQuery : errorQuery}
+        ClearQuery={ClearQuery}
+        usePredefinedQuery={usePredefinedQuery}
+        setValue={setValue}
+      />
     </VStack>
   );
 };
