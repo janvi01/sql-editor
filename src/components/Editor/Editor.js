@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import AceEditor from "react-ace";
 import "ace-builds/src-min-noconflict/mode-mysql";
 import "ace-builds/src-min-noconflict/ext-language_tools";
-import { Box, VStack } from "@chakra-ui/react";
+import { VStack } from "@chakra-ui/react";
 //react ace editor theme dependencies
 import "ace-builds/src-noconflict/theme-sqlserver";
 import "ace-builds/src-noconflict/theme-github";
