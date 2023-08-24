@@ -11,6 +11,7 @@ const FrontLayout = () => {
   const [value, setValue] = useState(query);
   const [submittedQuery, setSubmittedQuery] = useState("");
   const [history, setHistory] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const usePredefinedQuery = (value) => {
     setQuery(value);
@@ -18,6 +19,7 @@ const FrontLayout = () => {
 
   const runQuery = () => {
     setSubmittedQuery(query);
+    setLoading(!loading);
   };
 
   return (
@@ -50,7 +52,11 @@ const FrontLayout = () => {
         />
       </Stack>
       <Suspense fallback={<div>Loading...</div>}>
-        <OutputDisplay submittedQuery={submittedQuery} />
+        <OutputDisplay
+          submittedQuery={submittedQuery}
+          loading={loading}
+          setLoading={setLoading}
+        />
       </Suspense>
     </VStack>
   );
