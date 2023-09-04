@@ -8,10 +8,15 @@ import { BsFillFileEarmarkArrowDownFill } from "react-icons/bs";
 const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
   const [results, setResults] = useState([]);
   const [filename, setFilename] = useState("");
+  const [queryTime, setQueryTime] = useState();
 
   useEffect(() => {
+    // loading result and fetching query time
+    let startTime = performance.now();
     selectResults();
     setLoading(false);
+    let endTime = performance.now();
+    setQueryTime((endTime - startTime).toFixed(2) + " ms");
     // eslint-disable-next-line
   }, [submittedQuery]);
 
@@ -41,7 +46,7 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
             <Heading textAlign={"center"}>Query Output</Heading>
             <Spacer />
             <Button colorScheme="blue" cursor={"initial"} size={"xs"}>
-              Query took: 0.30ms
+              Query took: {queryTime}
             </Button>
             <CsvDownload data={results} filename={`${filename}.csv`}>
               <Button
