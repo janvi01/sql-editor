@@ -1,7 +1,5 @@
 # SQL Online Editor
 
-> This is a task given by Atlan for Frontend Engineering intern role.
-
 **SQL Online Editor** aims to provide users with a seamless and user-friendly platform for executing SQL queries, displaying query results in a table, maintaining a query history log, and supporting the export of results in CSV formats. The application will also provide a list of themes to change the editor UI and available tables in the sidebar for easy reference.
 
 ### Live : [https://sql-editor-online.vercel.app/](https://sql-editor-online.vercel.app/)
