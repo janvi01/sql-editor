@@ -21,7 +21,8 @@ function QueryHistory({ history, setQuery, setValue, setHistory }) {
       bgColor={"whiteAlpha.500"}
       p={2}
       borderRadius={"5px"}
-      minH={"20vh"}
+      h="300px"
+      overflowY='scroll'
       textAlign={"center"}
       boxShadow={"rgba(0, 0, 0, 0.35) 0px 5px 15px"}
     >
