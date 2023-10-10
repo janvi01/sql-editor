@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import OutputTable from "./OutputTable";
-import { Button, HStack, Heading, Spacer, Spinner } from "@chakra-ui/react";
+import { Box, Button, Center, HStack, Heading, Image, Spacer, Spinner, Text } from "@chakra-ui/react";
 import { queryMap } from "../../assets/data/queries";
 import CsvDownload from "react-json-to-csv";
 import { BsFillFileEarmarkArrowDownFill } from "react-icons/bs";
+import girlWithLaptopImage from "../../assets/screenshots/girlwithlaptop.png";
 
 const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
   const [results, setResults] = useState([]);
@@ -60,9 +61,23 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
           <OutputTable data={results} />
         </>
       ) : (
-        <Heading fontSize={"xl"} m={4}>
-          Nothing to show at the moment
-        </Heading>
+        <Box p={4}>
+            <Center>
+                <Image
+                    src={girlWithLaptopImage}
+                    alt="Girl With Laptop"
+                    maxH="300px"
+                />
+            </Center>
+            <Center>
+                <Box textAlign="center">
+                    <Heading as="h1" fontSize="xl" mt={4}>
+                        Nothing to show at the moment
+                    </Heading>
+                    <Text mt={2}>Run a query first to see resulting tablet</Text>
+                </Box>
+            </Center>
+        </Box>
       )}
     </>
   );
