@@ -6,6 +6,7 @@ import {
   Heading,
   HStack,
   IconButton,
+  Flex,
 } from "@chakra-ui/react";
 import { BsCodeSquare } from "react-icons/bs";
 import { MdDelete } from "react-icons/md";
@@ -15,6 +16,9 @@ function QueryHistory({ history, setQuery, setValue, setHistory }) {
     if (value.includes("*")) setQuery(value);
     setValue(value);
   };
+  const handleRemoveHistory = (historyItem) => {
+    setHistory(prevHistory => prevHistory.filter(history => history !== historyItem));
+  }
   return (
     <Box
       w={["100%", "20%"]}
@@ -47,8 +51,15 @@ function QueryHistory({ history, setQuery, setValue, setHistory }) {
               cursor={"pointer"}
               _hover={{ bg: "teal.500" }}
             >
-              <ListIcon as={BsCodeSquare} />
-              {item}
+              <Flex>
+                <ListIcon as={BsCodeSquare} />
+                {item}
+                <IconButton
+                  icon={<MdDelete />}
+                  aria-label="Delete"
+                  onClick={() => handleRemoveHistory(item)}
+                ></IconButton>
+              </Flex>
             </ListItem>
           ))}
         </List>
