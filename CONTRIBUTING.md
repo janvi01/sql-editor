@@ -6,7 +6,7 @@ Welcome to SQL Online Editor! We are thrilled to have you here and appreciate yo
 - Reporting bugs: If you find a bug in our project, please report it by opening a new issue on GitHub.
 - Suggesting new features: If you have an idea for a new feature, please submit a new issue on GitHub.
 - Fixing bugs: If you want to work on any issue/bug, comment on the issue and make a pull request.
-- Improving documentation: If you find any errors or omissions in our documentation, please submit a pull request with your changes.
+- Improving documentation: If you find any errors or omissions in our documentation, please create an issue and submit a pull request with your changes.
 
 ## Table of Contents
 
@@ -20,16 +20,19 @@ Welcome to SQL Online Editor! We are thrilled to have you here and appreciate yo
 
 ## Setting up the Project Locally
 
-To contribute to this project, you need to set it up on your local machine. You will need to have Git and Node.js installed. Follow these steps:
+> Prerequisites - Git and Node.js
+
+To contribute to this project, you need to set it up on your local machine. Follow these steps:
 
 1. **Fork [this](https://github.com/janvi01/sql-editor) Repository:** Click the "Fork" button at the top right corner of the repository page to create a copy of this repository in your GitHub account.
+> Note: Forking helps you make changes in your own fork and later create a pull request to merge those changes into the main repository.*
 
 2. **Clone Your Fork:** Clone your forked repository to your local machine using Git. Replace `<your-username>` with your GitHub username:
    ```bash
    git clone https://github.com/<your-username>/sql-editor.git
    ```
 
-3.  **Navigate to the project directory:** `cd <repository-name>`.
+3.  **Navigate to the project directory:** `cd sql-editor`.
 
 4. **Install Dependencies:** `npm install`.
 
@@ -37,19 +40,7 @@ To contribute to this project, you need to set it up on your local machine. You 
 
 *You can now open the project in your web browser at http://localhost:3000.*
 
-> Note: Forking helps you make changes in your own fork and later create a pull request to merge those changes into the main repository.*
-
 ## GitHub Workflow
-
-Once you have created a fork, follow these steps:
-
-#### Cloning the repository
-  ```bash
-   git clone https://github.com/<your-username>/sql-editor.git
-   ```
-
-#### Navigate to the project directory
-`cd <repository-name>`
 
 #### Adding Upstream Remote:
 This helps keep your fork up to date with the main repository.
@@ -71,7 +62,7 @@ git checkout -b <branch name>
 git commit -m "<Commit message>"
 ```
 
-#### Push your changes to your fork:
+#### Push your changes :
 
 ```bash
 git push -u origin <branch name>
@@ -84,7 +75,7 @@ git push -u origin <branch name>
 To create a pull request, follow these steps:
 
 1. Go to your fork of the repository on GitHub.
-2. Click the Pull requests tab.
+2. Click the Pull Requests tab.
 3. Click the New pull request button.
 4. Select the branch that you want to merge into the upstream repository.
 5. Click the Create pull request button.
