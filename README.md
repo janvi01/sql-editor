@@ -57,3 +57,19 @@ project.
 - Lazy loaded output display.
 - No error logs to the console.
 - Used Vercel for hosting.
+
+# [Community](https://github.com/Freakyab/sql-editor/blob/main/CONTRIBUTING.md?plain=1) and [Contributions](https://github.com/Freakyab/sql-editor/blob/main/CONTRIBUTING.md?plain=1)
+
+Welcome to SQL Online Editor! We are thrilled to have you here and appreciate your interest in contributing. This document provides guidelines on how to get started with this project, contribute code, and improve the project together.
+
+### Ways to contribute to the project:
+- Reporting bugs: If you find a bug in our project, please report it by opening a new issue on GitHub.
+- Suggesting new features: If you have an idea for a new feature, please submit a new issue on GitHub.
+- Fixing bugs: If you want to work on any issue/bug, comment on the issue and make a pull request.
+- Improving documentation: If you find any errors or omissions in our documentation, please create an issue and submit a pull request with your changes.
+
+### Contributors
+
+![Contributors](https://contrib.rocks/image?repo=janvi01/sql-editor&lastUpdate=37676)
+
+
