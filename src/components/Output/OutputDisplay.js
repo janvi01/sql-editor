@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import OutputTable from "./OutputTable";
-import { Button, HStack, Heading, Image, Spacer, Spinner, Text, VStack } from "@chakra-ui/react";
+import {Button, Heading, Image, Spacer, Spinner, Text, VStack ,Box ,HStack} from "@chakra-ui/react";
 import { queryMap } from "../../assets/data/queries";
 import CsvDownload from "react-json-to-csv";
 import { BsFillFileEarmarkArrowDownFill } from "react-icons/bs";
@@ -40,28 +40,59 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
     }
 
     return (
-        <>
+        <Box w={"100%"} px={4}>
             {results.length > 0 ? (
                 <>
-                    <HStack w={"100%"} px={4} justifyContent={"space-between"}>
-                        <Heading textAlign={"center"}>Query Output</Heading>
-                        <Spacer />
-                        <Button colorScheme="blue" cursor={"initial"} size={"xs"}>
-                            Query took: {queryTime}
-                        </Button>
-                        <CsvDownload data={results} filename={`${filename}.csv`}>
+                    <Box display={{ base: "block", md: "none" }} >
+                        <VStack alignItems="center" spacing={4} mb={4}>
+                            <Heading textAlign="center" fontSize={"3xl"}>
+                                Query Output
+                            </Heading>
                             <Button
-                                leftIcon={<BsFillFileEarmarkArrowDownFill />}
                                 colorScheme="blue"
+                                cursor="initial"
+                                fontSize={"xl"}
                             >
-                                Export CSV
+                                Query took: {queryTime}
                             </Button>
-                        </CsvDownload>
-                    </HStack>
+                            <CsvDownload data={results} filename={`${filename}.csv`}>
+                                <Button
+                                    leftIcon={<BsFillFileEarmarkArrowDownFill />}
+                                    colorScheme="blue"
+                                    fontSize={"xl"}
+                                >
+                                    Export CSV
+                                </Button>
+                            </CsvDownload>
+                        </VStack>
+                    </Box>
+                    <Box display={{ base: "none", md: "block" }}>
+                        <HStack justifyContent="space-between" px={8} mb={4}>
+                            <Heading textAlign="center" fontSize={"4xl"}>
+                                Query Output
+                            </Heading>
+                            <Spacer />
+                            <Button
+                                colorScheme="blue"
+                                cursor="initial"
+                                fontSize={"xl"}
+                            >
+                                Query took: {queryTime}
+                            </Button>
+                            <CsvDownload data={results} filename={`${filename}.csv`}>
+                                <Button
+                                    leftIcon={<BsFillFileEarmarkArrowDownFill />}
+                                    colorScheme="blue"
+                                >
+                                    Export CSV
+                                </Button>
+                            </CsvDownload>
+                        </HStack>
+                    </Box>
                     <OutputTable data={results} />
                 </>
             ) : (
-                <VStack justifyContent={"center"} p={4}>
+                <VStack justifyContent="center" p={4}>
                     <Image
                         src={girlWithLaptopImage}
                         alt="Girl With Laptop"
@@ -73,8 +104,9 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
                     <Text>Run a query first to see resulting tablet</Text>
                 </VStack>
             )}
-        </>
+        </Box>
     );
+
 };
 
 export default OutputDisplay;
