@@ -58,18 +58,12 @@ project.
 - No error logs to the console.
 - Used Vercel for hosting.
 
-# [Community](https://github.com/Freakyab/sql-editor/blob/main/CONTRIBUTING.md?plain=1) and [Contributions](https://github.com/Freakyab/sql-editor/blob/main/CONTRIBUTING.md?plain=1)
+# Community and Contributions
 
-Welcome to SQL Online Editor! We are thrilled to have you here and appreciate your interest in contributing. This document provides guidelines on how to get started with this project, contribute code, and improve the project together.
-
-### Ways to contribute to the project:
-- Reporting bugs: If you find a bug in our project, please report it by opening a new issue on GitHub.
-- Suggesting new features: If you have an idea for a new feature, please submit a new issue on GitHub.
-- Fixing bugs: If you want to work on any issue/bug, comment on the issue and make a pull request.
-- Improving documentation: If you find any errors or omissions in our documentation, please create an issue and submit a pull request with your changes.
+We warmly welcome all contributors! Our projects are community-built and each welcomes open collaboration. As you get started, please review this project's [contributing guidelines](./CONTRIBUTING.md). Whether you are a user or code contributor and whether you're opening an [issue](https://github.com/janvi01/sql-editor/issues)  or a [pull request](https://github.com/janvi01/sql-editor/pulls), know that any form of your engagement is considered contribution and is appreciated. Contributors are expected to adhere to the [CNCF Code of Conduct](./CONTRIBUTING.md)
 
 ### Contributors
-
+### Thanks to these wonderful Contributors 🌻
 ![Contributors](https://contrib.rocks/image?repo=janvi01/sql-editor&lastUpdate=37676)
 
 
