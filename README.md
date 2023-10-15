@@ -24,7 +24,7 @@
 
 ## Techstack used 🛠️
 
-Following technologies and libraries are used for the development of this
+The following technologies and libraries are used for the development of this
 project.
 
 - [React](https://react.dev/)
@@ -57,3 +57,12 @@ project.
 - Lazy loaded output display.
 - No error logs to the console.
 - Used Vercel for hosting.
+
+## Community and Contributions
+
+We warmly welcome all contributors! The Project is meant to build a community and it welcomes open collaboration. As you get started, please review this project's [contributing guidelines](https://github.com/janvi01/sql-editor/blob/main/CONTRIBUTING.md). Whether you are a user or code contributor and whether you're opening an [issue](https://github.com/janvi01/sql-editor/issues)  or a [pull request](https://github.com/janvi01/sql-editor/pulls), know that any form of your engagement is considered a contribution and is appreciated. Contributors are expected to adhere to the **Code of Conduct**.
+
+### Thanks to these wonderful Contributors 🌻
+![Contributors](https://contrib.rocks/image?repo=janvi01/sql-editor&lastUpdate=37676)
+
+
