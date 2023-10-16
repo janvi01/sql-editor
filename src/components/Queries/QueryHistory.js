@@ -16,7 +16,8 @@ function QueryHistory({ history, setQuery, setValue, setHistory }) {
     if (value.includes("*")) setQuery(value);
     setValue(value);
   };
-  const handleRemoveHistory = (historyItem) => {
+  const handleRemoveHistory = (e, historyItem) => {
+    e.stopPropagation();
     setHistory(prevHistory => prevHistory.filter(history => history !== historyItem));
   }
   return (
@@ -57,7 +58,7 @@ function QueryHistory({ history, setQuery, setValue, setHistory }) {
                 <IconButton
                   icon={<MdDelete />}
                   aria-label="Delete"
-                  onClick={() => handleRemoveHistory(item)}
+                  onClick={(e) => handleRemoveHistory(e, item)}
                 ></IconButton>
               </Flex>
             </ListItem>
