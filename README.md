@@ -64,5 +64,3 @@ We warmly welcome all contributors! The Project is meant to build a community an
 
 ### Thanks to these wonderful Contributors 🌻
 ![Contributors](https://contrib.rocks/image?repo=janvi01/sql-editor&lastUpdate=37676)
-
-
