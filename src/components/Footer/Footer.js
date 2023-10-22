@@ -15,7 +15,7 @@ function Footer() {
             color="#E7E6DA"
         >
             <Text fontSize="16" mb={2}>
-                SQL Online Editor - Copyright © {currentYear}
+                SQL Online Editor - Copyright © {currentYear} | Created by <Link href="https://github.com/janvi01" target="_blank">janvi01</Link>
             </Text>
             <HStack justifyContent="center" spacing={4}>
                 <Link href="https://github.com/janvi01" isExternal>
@@ -24,10 +24,10 @@ function Footer() {
                     </HStack>
                 </Link>
                 <Text>
-                    Found an issue? Report it{" "}
-                    <Link href="https://github.com/janvi01/sql-editor/issues/new/choose" isExternal>
+                Found an issue? Report it{" "}
+                <Link href="https://github.com/janvi01/sql-editor/issues/new/choose" isExternal>
                         <u>here</u>
-                    </Link>
+                </Link>
                 </Text>
             </HStack>
         </Box>

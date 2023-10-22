@@ -3,7 +3,7 @@ import Editor from "../components/Editor/Editor";
 import { Stack, VStack } from "@chakra-ui/react";
 import Navbar from "../components/Navbar/Navbar";
 import QueryHistory from "../components/Queries/QueryHistory";
-import Footer from "../components/Footer/Footer";
+
 
 
 const OutputDisplay = lazy(() => import("../components/Output/OutputDisplay"));
@@ -60,7 +60,6 @@ const FrontLayout = () => {
           setLoading={setLoading}
         />
       </Suspense>
-      <Footer />
     </VStack>
   );
 };
