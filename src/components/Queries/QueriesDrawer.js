@@ -1,6 +1,5 @@
 import React from "react";
 import {
-    Box,
     Button,
     Drawer,
     useDisclosure,
@@ -22,12 +21,10 @@ import {
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { AiOutlineBars } from "react-icons/ai";
 import { queryMap } from "../../assets/data/queries";
-import { BsFillFileEarmarkArrowUpFill } from "react-icons/bs";
 
 const QueriesDrawer = ({ usePredefinedQuery, displayText, setValue }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const btnRef = React.useRef();
-    let fileInput = React.useRef();
 
     const Queryonclick = (value) => {
         usePredefinedQuery(value);
@@ -44,21 +41,6 @@ const QueriesDrawer = ({ usePredefinedQuery, displayText, setValue }) => {
             >
                 {displayText ? "Available Tables" : ""}
             </Button>
-            {displayText &&
-                <Box>
-                    <input
-                        hidden
-                        type="file"
-                        ref={el => fileInput = el}
-                    />
-                    <Button
-                        onClick={() => fileInput.click()}
-                        leftIcon={<BsFillFileEarmarkArrowUpFill />}
-                        colorScheme="blue"
-                    >
-                        Import
-                    </Button>
-                </Box>}
             <Drawer
                 isOpen={isOpen}
                 placement="left"
