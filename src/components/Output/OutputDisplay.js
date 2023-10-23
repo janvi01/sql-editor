@@ -39,6 +39,18 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
     return <Spinner thickness="4px" size="xl" />;
   }
 
+  const downloadJson = () => {
+    const jsonBlob = new Blob([JSON.stringify(results, null, 2)], { type: 'application/json' });
+    const jsonUrl = URL.createObjectURL(jsonBlob);
+
+    const a = document.createElement('a');
+    a.href = jsonUrl;
+    a.download = `${filename}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
   return (
     <>
       {results.length > 0 ? (
@@ -55,8 +67,17 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
                 colorScheme="blue"
               >
                 Export CSV
-              </Button>
+              </Button >
             </CsvDownload>
+            <div>
+              <Button
+                leftIcon={<BsFillFileEarmarkArrowDownFill />}
+                onClick={downloadJson}
+                colorScheme='blue'
+              >
+                Export JSON
+              </Button>
+            </div>
           </HStack>
           <OutputTable data={results} />
         </>
