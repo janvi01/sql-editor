@@ -66,6 +66,8 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
             src={girlWithLaptopImage}
             alt="Girl With Laptop"
             maxH="300px"
+            width="100%"
+            height="100%"
           />
           <Heading as="h1" fontSize="xl" mt={4}>
             Nothing to show at the moment
