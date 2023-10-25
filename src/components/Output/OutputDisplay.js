@@ -48,6 +48,18 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
   if (loading) {
     return <Spinner thickness="4px" size="xl" />;
   }
+
+  function exportToJSON() {
+    const element = document.createElement("a");
+    const file = new Blob([JSON.stringify(results, null , 2)], {
+      type: "application/json",
+    });
+    element.href = URL.createObjectURL(file);
+    element.download = `${filename}.json`;
+    document.body.appendChild(element);
+    element.click();
+  };
+
   return (
     <>
       {results.length > 0 ? (
@@ -62,21 +74,27 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
               Query Output
             </Heading>
             <Spacer />
-            <HStack justify={"center"}>
-              <Button colorScheme="blue" cursor="initial" size={"xs"}>
-                Query took: {queryTime}
+            <Button colorScheme="blue" cursor={"initial"} size={"xs"}>
+              Query took: {queryTime}
+            </Button>
+            <CsvDownload data={results} filename={`${filename}.csv`}>
+              <Button
+                leftIcon={<BsFillFileEarmarkArrowDownFill />}
+                colorScheme="blue"
+              >
+                Export CSV
               </Button>
-              <CsvDownload data={results} filename={`${filename}.csv`}>
-                <Button
-                  leftIcon={<BsFillFileEarmarkArrowDownFill />}
-                  colorScheme="blue"
-                  fontSize={"xl"}
-                >
-                  Export CSV
-                </Button>
-              </CsvDownload>
-            </HStack>
-          </Stack>
+            </CsvDownload>
+            <div>
+              <Button
+              onClick={exportToJSON}
+                leftIcon={<BsFillFileEarmarkArrowDownFill />}
+                colorScheme="blue"
+              >
+                Export JSON
+              </Button>
+            </div>
+          </HStack>
           <OutputTable data={results} />
         </>
       ) : (
