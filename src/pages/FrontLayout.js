@@ -4,8 +4,6 @@ import { Stack, VStack } from "@chakra-ui/react";
 import Navbar from "../components/Navbar/Navbar";
 import QueryHistory from "../components/Queries/QueryHistory";
 
-
-
 const OutputDisplay = lazy(() => import("../components/Output/OutputDisplay"));
 
 const FrontLayout = () => {
@@ -25,7 +23,7 @@ const FrontLayout = () => {
   };
 
   return (
-    <VStack bgColor={"blackAlpha.300"} spacing={8} pb={12}>
+    <VStack bgColor={"blackAlpha.300"} spacing={8} pb={12} minH={"100vh"}>
       <Navbar usePredefinedQuery={usePredefinedQuery} setValue={setValue} />
       <Stack
         direction={["column", "row"]}
