@@ -38,53 +38,56 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
   if (loading) {
     return <Spinner thickness="4px" size="xl" />;
   }
-    return (
-        <>
-            {results.length > 0 ? (
-                <>
-                    <Stack
-                        direction={["column", "row"]}
-                        w={"100%"}
-                        px={4}
-                        justifyContent={"space-between"}
+  return (
+      <>
+        {results.length > 0 ? (
+            <>
+              <Stack
+                  direction={["column", "row"]}
+                  w={"100%"}
+                  px={4}
+                  justifyContent={"space-between"}
+              >
+                <Heading textAlign="center" fontSize={"3xl"}>
+                  Query Output
+                </Heading>
+                <Spacer />
+                <HStack justify={"center"}>
+                  <Button colorScheme="blue" cursor="initial" size={"xs"}>
+                    Query took: {queryTime}
+                  </Button>
+                </HStack>
+                <HStack justify={"center"}>
+                  <CsvDownload data={results} filename={`${filename}.csv`}>
+                    <Button
+                        leftIcon={<BsFillFileEarmarkArrowDownFill />}
+                        colorScheme="blue"
+                        fontSize={"xl"}
                     >
-                        <Heading textAlign="center" fontSize={"3xl"}>
-                            Query Output
-                        </Heading>
-                        <Spacer />
-                        <HStack justify={"center"}>
-                            <Button colorScheme="blue" cursor="initial" size={"xs"}>
-                                Query took: {queryTime}
-                            </Button>
-                        </HStack>
-                        <HStack justify={"center"}>
-                            <CsvDownload data={results} filename={`${filename}.csv`}>
-                                <Button
-                                    leftIcon={<BsFillFileEarmarkArrowDownFill />}
-                                    colorScheme="blue"
-                                    fontSize={"xl"}
-                                >
-                                    Export CSV
-                                </Button>
-                            </CsvDownload>
-                        </HStack>
-                    </Stack>
-                    <OutputTable data={results} />
-                </>
-            ) : (
-                <VStack justifyContent="center" p={4}>
-                    <Image
-                        src={girlWithLaptopImage}
-                        alt="Girl With Laptop"
-                        maxH="300px"
-                    />
-                    <Heading as="h1" fontSize="xl" mt={4}>
-                        Nothing to show at the moment
-                    </Heading>
-                    <Text>Run a query first to see resulting tablet</Text>
-                </VStack>
-            )}
-        </>
-    );
+                      Export CSV
+                    </Button>
+                  </CsvDownload>
+                </HStack>
+              </Stack>
+              <OutputTable data={results} />
+            </>
+        ) : (
+            <VStack justifyContent={"center"} p={4}>
+              <Image
+                  src={girlWithLaptopImage}
+                  alt="Girl With Laptop"
+                  maxH="300px"
+                  width="100%"
+                  height="100%"
+              />
+              <Heading as="h1" fontSize="xl" mt={4}>
+                Nothing to show at the moment
+              </Heading>
+              <Text>Run a query first to see resulting tablet</Text>
+            </VStack>
+        )}
+      </>
+  );
 };
+
 export default OutputDisplay;
