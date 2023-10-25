@@ -7,38 +7,37 @@ import { BsFillFileEarmarkArrowDownFill } from "react-icons/bs";
 import girlWithLaptopImage from "../../assets/screenshots/girlwithlaptop.png";
 
 const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
-    const [results, setResults] = useState([]);
-    const [filename, setFilename] = useState("");
-    const [queryTime, setQueryTime] = useState();
+  const [results, setResults] = useState([]);
+  const [filename, setFilename] = useState("");
+  const [queryTime, setQueryTime] = useState();
 
-    useEffect(() => {
-        // loading result and fetching query time
-        let startTime = performance.now();
-        selectResults();
-        setLoading(false);
-        let endTime = performance.now();
-        setQueryTime((endTime - startTime).toFixed(2) + " ms");
-        // eslint-disable-next-line
-    }, [submittedQuery]);
+  useEffect(() => {
+    // loading result and fetching query time
+    let startTime = performance.now();
+    selectResults();
+    setLoading(false);
+    let endTime = performance.now();
+    setQueryTime((endTime - startTime).toFixed(2) + " ms");
+    // eslint-disable-next-line
+  }, [submittedQuery]);
 
-    const selectResults = () => {
-        if (submittedQuery === "") {
-            setResults([]);
-            return;
-        }
-        const queryIndex = queryMap.findIndex((o) => o.query === submittedQuery);
-        if (queryIndex === -1) {
-            setResults();
-        } else {
-            setResults(queryMap[queryIndex].data);
-            setFilename(queryMap[queryIndex].tableQuery);
-        }
-    };
-
-    if (loading) {
-        return <Spinner thickness="4px" size="xl" />;
+  const selectResults = () => {
+    if (submittedQuery === "") {
+      setResults([]);
+      return;
     }
+    const queryIndex = queryMap.findIndex((o) => o.query === submittedQuery);
+    if (queryIndex === -1) {
+      setResults();
+    } else {
+      setResults(queryMap[queryIndex].data);
+      setFilename(queryMap[queryIndex].tableQuery);
+    }
+  };
 
+  if (loading) {
+    return <Spinner thickness="4px" size="xl" />;
+  }
     return (
         <>
             {results.length > 0 ? (
@@ -87,7 +86,5 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
             )}
         </>
     );
-
 };
-
 export default OutputDisplay;
