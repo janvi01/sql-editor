@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import OutputTable from "./OutputTable";
-import {Button, Heading, Image, Spacer, Spinner, Text, VStack ,Box ,HStack} from "@chakra-ui/react";
+import {Button, Heading, Image, Spacer, Spinner, Text, VStack ,Stack,HStack} from "@chakra-ui/react";
 import { queryMap } from "../../assets/data/queries";
 import CsvDownload from "react-json-to-csv";
 import { BsFillFileEarmarkArrowDownFill } from "react-icons/bs";
@@ -40,21 +40,25 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
     }
 
     return (
-        <Box w={"100%"} px={4}>
+        <>
             {results.length > 0 ? (
                 <>
-                    <Box display={{ base: "block", md: "none" }} >
-                        <VStack alignItems="center" spacing={4} mb={4}>
-                            <Heading textAlign="center" fontSize={"3xl"}>
-                                Query Output
-                            </Heading>
-                            <Button
-                                colorScheme="blue"
-                                cursor="initial"
-                                size={"xs"}
-                            >
+                    <Stack
+                        direction={["column", "row"]}
+                        w={"100%"}
+                        px={4}
+                        justifyContent={"space-between"}
+                    >
+                        <Heading textAlign="center" fontSize={"3xl"}>
+                            Query Output
+                        </Heading>
+                        <Spacer />
+                        <HStack justify={"center"}>
+                            <Button colorScheme="blue" cursor="initial" size={"xs"}>
                                 Query took: {queryTime}
                             </Button>
+                        </HStack>
+                        <HStack justify={"center"}>
                             <CsvDownload data={results} filename={`${filename}.csv`}>
                                 <Button
                                     leftIcon={<BsFillFileEarmarkArrowDownFill />}
@@ -64,31 +68,8 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
                                     Export CSV
                                 </Button>
                             </CsvDownload>
-                        </VStack>
-                    </Box>
-                    <Box display={{ base: "none", md: "block" }}>
-                        <HStack justifyContent="space-between" px={8}  mb={4}>
-                            <Heading textAlign="center" fontSize={"4xl"}>
-                                Query Output
-                            </Heading>
-                            <Spacer />
-                            <Button
-                                colorScheme="blue"
-                                cursor="initial"
-                                size={"xs"}
-                            >
-                                Query took: {queryTime}
-                            </Button>
-                            <CsvDownload data={results} filename={`${filename}.csv`}>
-                                <Button
-                                    leftIcon={<BsFillFileEarmarkArrowDownFill />}
-                                    colorScheme="blue"
-                                >
-                                    Export CSV
-                                </Button>
-                            </CsvDownload>
                         </HStack>
-                    </Box>
+                    </Stack>
                     <OutputTable data={results} />
                 </>
             ) : (
@@ -104,7 +85,7 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
                     <Text>Run a query first to see resulting tablet</Text>
                 </VStack>
             )}
-        </Box>
+        </>
     );
 
 };
