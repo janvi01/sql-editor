@@ -18,8 +18,10 @@ function QueryHistory({ history, setQuery, setValue, setHistory }) {
   };
   const handleRemoveHistory = (e, historyItem) => {
     e.stopPropagation();
-    setHistory(prevHistory => prevHistory.filter(history => history !== historyItem));
-  }
+    setHistory((prevHistory) =>
+      prevHistory.filter((history) => history !== historyItem)
+    );
+  };
   return (
     <Box
       w={["100%", "20%"]}
@@ -27,6 +29,8 @@ function QueryHistory({ history, setQuery, setValue, setHistory }) {
       p={2}
       borderRadius={"5px"}
       minH={"20vh"}
+      maxH={"40vh"}
+      overflowY="auto"
       textAlign={"center"}
       boxShadow={"rgba(0, 0, 0, 0.35) 0px 5px 15px"}
     >
@@ -52,7 +56,7 @@ function QueryHistory({ history, setQuery, setValue, setHistory }) {
               cursor={"pointer"}
               _hover={{ bg: "teal.500" }}
             >
-              <Flex>
+              <Flex align="center" justify="space-between">
                 <ListIcon as={BsCodeSquare} />
                 {item}
                 <IconButton
