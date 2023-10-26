@@ -1,6 +1,16 @@
 import React, { useEffect, useState } from "react";
 import OutputTable from "./OutputTable";
-import { Button, HStack, Heading, Image, Spacer, Spinner, Text, VStack } from "@chakra-ui/react";
+import {
+  Button,
+  Heading,
+  Image,
+  Spacer,
+  Spinner,
+  Text,
+  VStack,
+  Stack,
+  HStack,
+} from "@chakra-ui/react";
 import { queryMap } from "../../assets/data/queries";
 import CsvDownload from "react-json-to-csv";
 import { BsFillFileEarmarkArrowDownFill } from "react-icons/bs";
@@ -38,36 +48,43 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
   if (loading) {
     return <Spinner thickness="4px" size="xl" />;
   }
-
   return (
     <>
       {results.length > 0 ? (
         <>
-          <HStack w={"100%"} px={4} justifyContent={"space-between"}>
-            <Heading textAlign={"center"}>Query Output</Heading>
+          <Stack
+            direction={["column", "row"]}
+            w={"100%"}
+            px={4}
+            justifyContent={"space-between"}
+          >
+            <Heading textAlign="center" fontSize={"3xl"}>
+              Query Output
+            </Heading>
             <Spacer />
-            <Button colorScheme="blue" cursor={"initial"} size={"xs"}>
-              Query took: {queryTime}
-            </Button>
-            <CsvDownload data={results} filename={`${filename}.csv`}>
-              <Button
-                leftIcon={<BsFillFileEarmarkArrowDownFill />}
-                colorScheme="blue"
-              >
-                Export CSV
+            <HStack justify={"center"}>
+              <Button colorScheme="blue" cursor="initial" size={"xs"}>
+                Query took: {queryTime}
               </Button>
-            </CsvDownload>
-          </HStack>
+              <CsvDownload data={results} filename={`${filename}.csv`}>
+                <Button
+                  leftIcon={<BsFillFileEarmarkArrowDownFill />}
+                  colorScheme="blue"
+                  fontSize={"xl"}
+                >
+                  Export CSV
+                </Button>
+              </CsvDownload>
+            </HStack>
+          </Stack>
           <OutputTable data={results} />
         </>
       ) : (
-        <VStack justifyContent={"center"} p={4}>
+        <VStack justifyContent="center" p={4}>
           <Image
             src={girlWithLaptopImage}
             alt="Girl With Laptop"
             maxH="300px"
-            width="100%"
-            height="100%"
           />
           <Heading as="h1" fontSize="xl" mt={4}>
             Nothing to show at the moment
