@@ -28,7 +28,8 @@ function QueryHistory({ history, setQuery, setValue, setHistory }) {
       bgColor={"whiteAlpha.500"}
       p={2}
       borderRadius={"5px"}
-      maxH={"50vh"}
+      minH={"20vh"}
+      maxH={"40vh"}
       overflowY="auto"
       textAlign={"center"}
       boxShadow={"rgba(0, 0, 0, 0.35) 0px 5px 15px"}
