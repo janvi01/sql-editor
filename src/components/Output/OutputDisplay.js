@@ -64,7 +64,7 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
             <Spacer />
             <HStack justify={"center"}>
               <Button colorScheme="blue" cursor="initial" size={"xs"}>
-                Query took: {queryTime}         
+                Query took: {queryTime}
               </Button>
               <CsvDownload data={results} filename={`${filename}.csv`}>
                 <Button
