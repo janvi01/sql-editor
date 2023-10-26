@@ -94,7 +94,7 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
                 Export JSON
               </Button>
             </div>
-          </HStack>
+          </Stack>
           <OutputTable data={results} />
         </>
       ) : (
