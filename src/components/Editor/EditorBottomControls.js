@@ -1,7 +1,8 @@
 import React from "react";
-import { Stack, Button, Spacer } from "@chakra-ui/react";
+import { Box, Stack, Button, Spacer, Input } from "@chakra-ui/react";
 import QueriesDrawer from "../Queries/QueriesDrawer";
 import { AiFillCaretRight } from "react-icons/ai";
+import { BsFillFileEarmarkArrowUpFill } from "react-icons/bs";
 
 const EditorBottomControls = ({
   SubmitQuery,
@@ -9,6 +10,7 @@ const EditorBottomControls = ({
   usePredefinedQuery,
   setValue,
 }) => {
+  let fileInput = React.useRef();
   return (
     <Stack
       direction={["column", "row"]}
@@ -22,6 +24,16 @@ const EditorBottomControls = ({
         displayText={true}
         setValue={setValue}
       />
+      <Box>
+        <Input hidden type="file" ref={(el) => (fileInput = el)} />
+        <Button
+          onClick={() => fileInput.click()}
+          leftIcon={<BsFillFileEarmarkArrowUpFill />}
+          colorScheme="blue"
+        >
+          Import
+        </Button>
+      </Box>
       <Spacer />
       <Button
         as={"button"}
