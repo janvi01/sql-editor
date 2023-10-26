@@ -8,7 +8,7 @@ import {
   Spinner,
   Text,
   VStack,
-  Box,
+  Stack,
   HStack,
 } from "@chakra-ui/react";
 import { queryMap } from "../../assets/data/queries";
@@ -49,14 +49,20 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
     return <Spinner thickness="4px" size="xl" />;
   }
   return (
-    <Box w={"100%"} px={4}>
+    <>
       {results.length > 0 ? (
         <>
-          <Box display={{ base: "block", md: "none" }}>
-            <VStack alignItems="center" spacing={4} mb={4}>
-              <Heading textAlign="center" fontSize={"3xl"}>
-                Query Output
-              </Heading>
+          <Stack
+            direction={["column", "row"]}
+            w={"100%"}
+            px={4}
+            justifyContent={"space-between"}
+          >
+            <Heading textAlign="center" fontSize={"3xl"}>
+              Query Output
+            </Heading>
+            <Spacer />
+            <HStack justify={"center"}>
               <Button colorScheme="blue" cursor="initial" size={"xs"}>
                 Query took: {queryTime}
               </Button>
@@ -69,27 +75,8 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
                   Export CSV
                 </Button>
               </CsvDownload>
-            </VStack>
-          </Box>
-          <Box display={{ base: "none", md: "block" }}>
-            <HStack justifyContent="space-between" px={8} mb={4}>
-              <Heading textAlign="center" fontSize={"4xl"}>
-                Query Output
-              </Heading>
-              <Spacer />
-              <Button colorScheme="blue" cursor="initial" size={"xs"}>
-                Query took: {queryTime}
-              </Button>
-              <CsvDownload data={results} filename={`${filename}.csv`}>
-                <Button
-                  leftIcon={<BsFillFileEarmarkArrowDownFill />}
-                  colorScheme="blue"
-                >
-                  Export CSV
-                </Button>
-              </CsvDownload>
             </HStack>
-          </Box>
+          </Stack>
           <OutputTable data={results} />
         </>
       ) : (
@@ -105,7 +92,7 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
           <Text>Run a query first to see resulting tablet</Text>
         </VStack>
       )}
-    </Box>
+    </>
   );
 };
 
