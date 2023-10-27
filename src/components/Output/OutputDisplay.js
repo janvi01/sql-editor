@@ -10,6 +10,7 @@ import {
   VStack,
   Stack,
   HStack,
+  Flex,
 } from "@chakra-ui/react";
 import { queryMap } from "../../assets/data/queries";
 import CsvDownload from "react-json-to-csv";
@@ -65,7 +66,7 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
       {results.length > 0 ? (
         <>
           <Stack
-            direction={["column", "row"]}
+            direction={["column-reverse", "column-reverse","row"]}
             w={"100%"}
             px={4}
             justifyContent={"space-between"}
@@ -74,26 +75,32 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
               Query Output
             </Heading>
             <Spacer />
-            <Button colorScheme="blue" cursor={"initial"} size={"xs"}>
+            
+            <Flex justify={"center"} align={"center"} direction={["column-reverse","row"]} >
+            <Button colorScheme="blue" mr={2} cursor={"initial"} size={"xs"}>
               Query took: {queryTime}
             </Button>
-            <HStack justify={"center"}>
-              <CsvDownload data={results} filename={`${filename}.csv`}>
+              <Flex justify={'space-between'} py={2}>
+                <CsvDownload   data={results} filename={`${filename}.csv`}>
+                  <Button
+                    leftIcon={<BsFillFileEarmarkArrowDownFill />}
+                    colorScheme="blue"
+                    size={['sm','md']}
+                  >
+                    Export CSV
+                  </Button>
+                </CsvDownload>
                 <Button
+                  ml={2}
+                  onClick={exportToJSON}
                   leftIcon={<BsFillFileEarmarkArrowDownFill />}
                   colorScheme="blue"
+                  size={['sm','md']}
                 >
-                  Export CSV
+                  Export JSON
                 </Button>
-              </CsvDownload>
-              <Button
-                onClick={exportToJSON}
-                leftIcon={<BsFillFileEarmarkArrowDownFill />}
-                colorScheme="blue"
-              >
-                Export JSON
-              </Button>
-            </HStack>
+              </Flex>
+            </Flex>
           </Stack>
           <OutputTable data={results} />
         </>
