@@ -51,14 +51,14 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
 
   function exportToJSON() {
     const element = document.createElement("a");
-    const file = new Blob([JSON.stringify(results, null , 2)], {
+    const file = new Blob([JSON.stringify(results, null, 2)], {
       type: "application/json",
     });
     element.href = URL.createObjectURL(file);
     element.download = `${filename}.json`;
     document.body.appendChild(element);
     element.click();
-  };
+  }
 
   return (
     <>
@@ -77,23 +77,23 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
             <Button colorScheme="blue" cursor={"initial"} size={"xs"}>
               Query took: {queryTime}
             </Button>
-            <CsvDownload data={results} filename={`${filename}.csv`}>
+            <HStack justify={"center"}>
+              <CsvDownload data={results} filename={`${filename}.csv`}>
+                <Button
+                  leftIcon={<BsFillFileEarmarkArrowDownFill />}
+                  colorScheme="blue"
+                >
+                  Export CSV
+                </Button>
+              </CsvDownload>
               <Button
-                leftIcon={<BsFillFileEarmarkArrowDownFill />}
-                colorScheme="blue"
-              >
-                Export CSV
-              </Button>
-            </CsvDownload>
-            <div>
-              <Button
-              onClick={exportToJSON}
+                onClick={exportToJSON}
                 leftIcon={<BsFillFileEarmarkArrowDownFill />}
                 colorScheme="blue"
               >
                 Export JSON
               </Button>
-            </div>
+            </HStack>
           </Stack>
           <OutputTable data={results} />
         </>
