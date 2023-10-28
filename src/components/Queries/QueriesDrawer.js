@@ -23,7 +23,6 @@ import { AiOutlineBars } from "react-icons/ai";
 import { queryMap } from "../../assets/data/queries";
 
 const QueriesDrawer = ({ usePredefinedQuery, displayText, setValue }) => {
-  
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
 

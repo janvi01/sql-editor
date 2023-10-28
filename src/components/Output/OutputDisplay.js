@@ -66,7 +66,7 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
       {results.length > 0 ? (
         <>
           <Stack
-            direction={["column-reverse", "column-reverse","row"]}
+            direction={["column", "column","row"]}
             w={"100%"}
             px={4}
             justifyContent={"space-between"}
