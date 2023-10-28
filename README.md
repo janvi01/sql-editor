@@ -1,8 +1,8 @@
-# SQL Online Editor (Repo : `sql-online-editor`)
+# SQL Online Editor 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-60-orange.svg?style=flat-square)](#contributors-)
+[![Contributors](https://img.shields.io/github/contributors/janvi01/sql-editor?style=flat-square)](https://github.com/janvi01/sql-editor/graphs/contributors)
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
@@ -10,7 +10,7 @@
   <a href="https://sql-editor-online.vercel.app/" target="_blank" style="font-size:50px"><img src="/public/favicon.png" alt="SQL-editor" width="125" /></a>
 </p>
 
-<h4 align="center">"Explore . Develop . Innovate on Your SQL Editing Journey</h4>
+<h4 align="center">"Craft SQL queries effortlessly in our intuitive online editor."</h4>
 
 <p align="center">
   <a href="https://github.com/janvi01/sql-editor/blob/main/LICENSE" target="blank">
@@ -28,7 +28,7 @@
 <a href="https://github.com/janvi01/sql-editor/pulls" target="blank">
 <img src="https://img.shields.io/github/issues-pr/janvi01/sql-editor?style=flat-square" alt="sql-editor pull-requests"/>
 </a>
-<a href="https://twitter.com/intent/tweet?text=%F0%9F%9A%80%20Explore%20SQL%20EDITOR%20%E2%80%93%20your%20browser-based%20solution%20for%20seamless%20SQL%20tasks.%20No%20installations%20required!%20Try%20it%20now!&url=https%3A%2F%2Fgithub.com%2Fjanvi01%2Fsql-editor"><img src="https://img.shields.io/twitter/url?label=Share%20on%20Twitter&style=social&url=https%3A%2F%2Fgithub.com%2Freactplay%2Freact-play"></a>
+<a href="https://twitter.com/intent/tweet?text=%F0%9F%9A%80%20Explore%20SQL%20EDITOR%20%E2%80%93%20your%20browser-based%20solution%20for%20seamless%20SQL%20tasks.%20No%20installations%20required!%20Try%20it%20now!&url=https%3A%2F%2Fgithub.com%2Fjanvi01%2Fsql-editor"><img src="https://img.shields.io/twitter/url?label=Share%20on%20Twitter&style=social&url=https%3A%2F%2Fgithub.com%2Fjanvi01%2Fsql-editor"></a>
 
 </p>
 
