@@ -3,6 +3,8 @@
 <p align="center">
 <a href="https://github.com/janvi01/sql-editor/graphs/contributors" target="_blank">
 <img src="https://img.shields.io/github/contributors/janvi01/sql-editor?style=flat-square" alt="sql-editor contributors" />
+</a>
+</p>
 
 <p align="center">
 <a href="https://sql-editor-online.vercel.app/" target="_blank" style="font-size:50px">
