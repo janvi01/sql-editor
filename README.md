@@ -1,4 +1,46 @@
-# SQL Online Editor
+<h1 align="center">SQL Online Editor</h4>
+
+<p align="center">
+<a href="https://github.com/janvi01/sql-editor/graphs/contributors" target="_blank">
+<img src="https://img.shields.io/github/contributors/janvi01/sql-editor?style=flat-square" alt="sql-editor contributors" />
+</a>
+</p>
+
+<p align="center">
+<a href="https://sql-editor-online.vercel.app/" target="_blank" style="font-size:50px">
+<img src="/public/favicon.png" alt="SQL-editor" width="125" /></a>
+</p>
+
+<h4 align="center">"Craft SQL queries effortlessly in our intuitive online editor."</h4>
+
+<p align="center">
+<a href="https://github.com/janvi01/sql-editor/blob/main/LICENSE" target="_blank">
+<img src="https://img.shields.io/github/license/janvi01/sql-editor?style=flat-square" alt="sql-editor licence" />
+</a>
+<a href="https://github.com/janvi01/sql-editor/fork" target="_blank">
+<img src="https://img.shields.io/github/forks/janvi01/sql-editor?style=flat-square" alt="sql-editor forks"/>
+</a>
+<a href="https://github.com/janvi01/sql-editor/stargazers" target="_blank">
+<img src="https://img.shields.io/github/stars/janvi01/sql-editor?style=flat-square" alt="sql-editor stars"/>
+</a>
+<a href="https://github.com/janvi01/sql-editor/issues" target="_blank">
+<img src="https://img.shields.io/github/issues/janvi01/sql-editor?style=flat-square" alt="sql-editor issues"/>
+</a>
+<a href="https://github.com/janvi01/sql-editor/pulls" target="_blank">
+<img src="https://img.shields.io/github/issues-pr/janvi01/sql-editor?style=flat-square" alt="sql-editor pull-requests"/>
+</a>
+<a href="https://twitter.com/intent/tweet?text=%F0%9F%9A%80%20Explore%20SQL%20EDITOR%20%E2%80%93%20your%20browser-based%20solution%20for%20seamless%20SQL%20tasks.%20No%20installations%20required!%20Try%20it%20now!&url=https%3A%2F%2Fgithub.com%2Fjanvi01%2Fsql-editor" target="_blank">
+<img src="https://img.shields.io/twitter/url?label=Share%20on%20Twitter&style=social&url=https%3A%2F%2Fgithub.com%2Fjanvi01%2Fsql-editor">
+</a>
+</p>
+
+<p align="center">
+    <a href="https://sql-editor-online.vercel.app/" target="_blank">View Demo</a>
+    ·
+    <a href="https://github.com/janvi01/sql-editor/issues/new/choose" target="_blank">Report Bug</a>
+    ·
+    <a href="https://github.com/janvi01/sql-editor/issues/new/choose" target="_blank">Request Feature</a>
+</p>
 
 **SQL Online Editor** aims to provide users with a seamless and user-friendly platform for executing SQL queries, displaying query results in a table, maintaining a query history log, and supporting the export of results in CSV formats. The application will also provide a list of themes to change the editor UI and available tables in the sidebar for easy reference.
 
@@ -60,7 +102,8 @@ project.
 
 ## Community and Contributions
 
-We warmly welcome all contributors! The Project is meant to build a community and it welcomes open collaboration. As you get started, please review this project's [contributing guidelines](https://github.com/janvi01/sql-editor/blob/main/CONTRIBUTING.md). Whether you are a user or code contributor and whether you're opening an [issue](https://github.com/janvi01/sql-editor/issues)  or a [pull request](https://github.com/janvi01/sql-editor/pulls), know that any form of your engagement is considered a contribution and is appreciated. Contributors are expected to adhere to the **Code of Conduct**.
+We warmly welcome all contributors! The Project is meant to build a community and it welcomes open collaboration. As you get started, please review this project's [contributing guidelines](https://github.com/janvi01/sql-editor/blob/main/CONTRIBUTING.md). Whether you are a user or code contributor and whether you're opening an [issue](https://github.com/janvi01/sql-editor/issues) or a [pull request](https://github.com/janvi01/sql-editor/pulls), know that any form of your engagement is considered a contribution and is appreciated. Contributors are expected to adhere to the **Code of Conduct**.
 
 ### Thanks to these wonderful Contributors 🌻
+
 ![Contributors](https://contrib.rocks/image?repo=janvi01/sql-editor&lastUpdate=37676)
