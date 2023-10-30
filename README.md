@@ -1,7 +1,7 @@
 <h1 align="center">SQL Online Editor</h4>
 
 <p align="center">
-<a href="https://github.com/janvi01/sql-editor/graphs/contributors" target="blank">
+<a href="https://github.com/janvi01/sql-editor/graphs/contributors" target="_blank">
 <img src="https://img.shields.io/github/contributors/janvi01/sql-editor?style=flat-square" alt="sql-editor contributors" />
 
 <p align="center">
@@ -12,32 +12,32 @@
 <h4 align="center">"Craft SQL queries effortlessly in our intuitive online editor."</h4>
 
 <p align="center">
-<a href="https://github.com/janvi01/sql-editor/blob/main/LICENSE" target="blank">
+<a href="https://github.com/janvi01/sql-editor/blob/main/LICENSE" target="_blank">
 <img src="https://img.shields.io/github/license/janvi01/sql-editor?style=flat-square" alt="sql-editor licence" />
 </a>
-<a href="https://github.com/janvi01/sql-editor/fork" target="blank">
+<a href="https://github.com/janvi01/sql-editor/fork" target="_blank">
 <img src="https://img.shields.io/github/forks/janvi01/sql-editor?style=flat-square" alt="sql-editor forks"/>
 </a>
-<a href="https://github.com/janvi01/sql-editor/stargazers" target="blank">
+<a href="https://github.com/janvi01/sql-editor/stargazers" target="_blank">
 <img src="https://img.shields.io/github/stars/janvi01/sql-editor?style=flat-square" alt="sql-editor stars"/>
 </a>
-<a href="https://github.com/janvi01/sql-editor/issues" target="blank">
+<a href="https://github.com/janvi01/sql-editor/issues" target="_blank">
 <img src="https://img.shields.io/github/issues/janvi01/sql-editor?style=flat-square" alt="sql-editor issues"/>
 </a>
-<a href="https://github.com/janvi01/sql-editor/pulls" target="blank">
+<a href="https://github.com/janvi01/sql-editor/pulls" target="_blank">
 <img src="https://img.shields.io/github/issues-pr/janvi01/sql-editor?style=flat-square" alt="sql-editor pull-requests"/>
 </a>
-<a href="https://twitter.com/intent/tweet?text=%F0%9F%9A%80%20Explore%20SQL%20EDITOR%20%E2%80%93%20your%20browser-based%20solution%20for%20seamless%20SQL%20tasks.%20No%20installations%20required!%20Try%20it%20now!&url=https%3A%2F%2Fgithub.com%2Fjanvi01%2Fsql-editor" target="blank">
+<a href="https://twitter.com/intent/tweet?text=%F0%9F%9A%80%20Explore%20SQL%20EDITOR%20%E2%80%93%20your%20browser-based%20solution%20for%20seamless%20SQL%20tasks.%20No%20installations%20required!%20Try%20it%20now!&url=https%3A%2F%2Fgithub.com%2Fjanvi01%2Fsql-editor" target="_blank">
 <img src="https://img.shields.io/twitter/url?label=Share%20on%20Twitter&style=social&url=https%3A%2F%2Fgithub.com%2Fjanvi01%2Fsql-editor">
 </a>
 </p>
 
 <p align="center">
-    <a href="https://sql-editor-online.vercel.app/" target="blank">View Demo</a>
+    <a href="https://sql-editor-online.vercel.app/" target="_blank">View Demo</a>
     ·
-    <a href="https://github.com/janvi01/sql-editor/issues/new/choose" target="blank">Report Bug</a>
+    <a href="https://github.com/janvi01/sql-editor/issues/new/choose" target="_blank">Report Bug</a>
     ·
-    <a href="https://github.com/janvi01/sql-editor/issues/new/choose" target="blank">Request Feature</a>
+    <a href="https://github.com/janvi01/sql-editor/issues/new/choose" target="_blank">Request Feature</a>
 </p>
 
 **SQL Online Editor** aims to provide users with a seamless and user-friendly platform for executing SQL queries, displaying query results in a table, maintaining a query history log, and supporting the export of results in CSV formats. The application will also provide a list of themes to change the editor UI and available tables in the sidebar for easy reference.
