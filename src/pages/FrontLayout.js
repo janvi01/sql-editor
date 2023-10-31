@@ -26,7 +26,7 @@ const FrontLayout = () => {
     <VStack bgColor={"blackAlpha.300"} spacing={8} pb={12} minH={"100vh"}>
       <Navbar usePredefinedQuery={usePredefinedQuery} setValue={setValue} />
       <Stack
-        direction={["column", "column","row"]}
+        direction={["column", "column", "row"]}
         w={"100%"}
         justifyContent={"space-between"}
         px={4}

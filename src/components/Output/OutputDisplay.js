@@ -9,7 +9,6 @@ import {
   Text,
   VStack,
   Stack,
-  HStack,
   Flex,
 } from "@chakra-ui/react";
 import { queryMap } from "../../assets/data/queries";
@@ -66,7 +65,7 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
       {results.length > 0 ? (
         <>
           <Stack
-            direction={["column", "column","row"]}
+            direction={["column", "column", "row"]}
             w={"100%"}
             px={4}
             justifyContent={"space-between"}
@@ -75,17 +74,21 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
               Query Output
             </Heading>
             <Spacer />
-            
-            <Flex justify={"center"} align={"center"} direction={["column-reverse","row"]} >
-            <Button colorScheme="blue" mr={2} cursor={"initial"} size={"xs"}>
-              Query took: {queryTime}
-            </Button>
-              <Flex justify={'space-between'} py={2}>
-                <CsvDownload   data={results} filename={`${filename}.csv`}>
+
+            <Flex
+              justify={"center"}
+              align={"center"}
+              direction={["column-reverse", "row"]}
+            >
+              <Button colorScheme="blue" mr={2} cursor={"initial"} size={"xs"}>
+                Query took: {queryTime}
+              </Button>
+              <Flex justify={"space-between"} py={[2, 0]}>
+                <CsvDownload data={results} filename={`${filename}.csv`}>
                   <Button
                     leftIcon={<BsFillFileEarmarkArrowDownFill />}
                     colorScheme="blue"
-                    size={['sm','md']}
+                    size={["sm", "md"]}
                   >
                     Export CSV
                   </Button>
@@ -95,7 +98,7 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
                   onClick={exportToJSON}
                   leftIcon={<BsFillFileEarmarkArrowDownFill />}
                   colorScheme="blue"
-                  size={['sm','md']}
+                  size={["sm", "md"]}
                 >
                   Export JSON
                 </Button>
