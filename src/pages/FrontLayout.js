@@ -19,7 +19,7 @@ const FrontLayout = () => {
 
   const runQuery = () => {
     setSubmittedQuery(query);
-    setLoading(!loading);
+    setLoading(false);
   };
 
   return (
