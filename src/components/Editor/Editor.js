@@ -37,6 +37,7 @@ const Editor = ({
 
   const onChange = (newValue) => {
     setValue(newValue);
+    setQuery(newValue);
   };
 
   useEffect(() => {
