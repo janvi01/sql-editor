@@ -38,7 +38,7 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
     }
     const queryIndex = queryMap.findIndex((o) => o.query === submittedQuery);
     if (queryIndex === -1) {
-      setResults();
+      setResults([]);
     } else {
       setResults(queryMap[queryIndex].data);
       setFilename(queryMap[queryIndex].tableQuery);
