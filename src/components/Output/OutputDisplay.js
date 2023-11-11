@@ -32,14 +32,16 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
     setQueryTime((endTime - startTime).toFixed(2) + " ms");
 
     // Show toast when query runs successfully
-    toast({
-      title: "Query Run Successfully",
-      description: "Your query has been executed successfully.",
-      status: "success",
-      duration: 2000, 
-      isClosable: true,
-      colorScheme: "blue",
-    });
+    if (submittedQuery !== "") {
+      toast({
+        title: "Query Run Successfully",
+        description: "Your query has been executed successfully.",
+        status: "success",
+        duration: 2000,
+        isClosable: true,
+        colorScheme: "blue",
+      });
+    }
     // eslint-disable-next-line
   }, [submittedQuery]);
 
