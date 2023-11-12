@@ -108,17 +108,26 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
           <OutputTable data={results} />
         </>
       ) : (
-        <VStack justifyContent="center" p={4}>
-          <Image
-            src={girlWithLaptopImage}
-            alt="Girl With Laptop"
-            maxH="300px"
-          />
-          <Heading as="h1" fontSize="xl" mt={4}>
-            Nothing to show at the moment
-          </Heading>
-          <Text>Run a query first to see resulting tablet</Text>
-        </VStack>
+        <>
+          <VStack justifyContent="center" p={4}>
+            <Image
+              src={girlWithLaptopImage}
+              alt="Girl With Laptop"
+              maxH="300px"
+            />
+            <Heading as="h1" fontSize="xl" mt={4}>
+              Nothing to show at the moment
+            </Heading>
+            <>
+              {submittedQuery.length > 0 ? (
+                <Text>Query is incorrect</Text>
+              ) : (
+                <Text>Run a query first to see resulting tablet</Text>
+              )
+              }
+            </>
+          </VStack>
+        </>
       )}
     </>
   );
