@@ -9,6 +9,7 @@ import {
   Text,
   VStack,
   Stack,
+  useToast,
   Flex,
 } from "@chakra-ui/react";
 import { queryMap } from "../../assets/data/queries";
@@ -20,6 +21,7 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
   const [results, setResults] = useState([]);
   const [filename, setFilename] = useState("");
   const [queryTime, setQueryTime] = useState();
+  const toast = useToast();
 
   useEffect(() => {
     // loading result and fetching query time
@@ -28,6 +30,18 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
     setLoading(false);
     let endTime = performance.now();
     setQueryTime((endTime - startTime).toFixed(2) + " ms");
+
+    // Show toast when query runs successfully
+    if (submittedQuery !== "") {
+      toast({
+        title: "Query Run Successfully",
+        description: "Your query has been executed successfully.",
+        status: "success",
+        duration: 2000,
+        isClosable: true,
+        colorScheme: "blue",
+      });
+    }
     // eslint-disable-next-line
   }, [submittedQuery]);
 
@@ -117,7 +131,7 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
           <Heading as="h1" fontSize="xl" mt={4}>
             Nothing to show at the moment
           </Heading>
-          <Text>Run a query first to see resulting tablet</Text>
+          <Text>Run a query first to see resulting table</Text>
         </VStack>
       )}
     </>
