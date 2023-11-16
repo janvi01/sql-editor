@@ -10,7 +10,7 @@ import {
   VStack,
   Stack,
   HStack,
-  useToast, // Import useToast
+  useToast,
 } from "@chakra-ui/react";
 import { queryMap } from "../../assets/data/queries";
 import CsvDownload from "react-json-to-csv";
@@ -21,7 +21,7 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
   const [results, setResults] = useState([]);
   const [filename, setFilename] = useState("");
   const [queryTime, setQueryTime] = useState();
-  const toast = useToast(); // Initialize useToast
+  const toast = useToast();
 
   useEffect(() => {
     // loading result and fetching query time
