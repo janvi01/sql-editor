@@ -19,14 +19,14 @@ const FrontLayout = () => {
 
   const runQuery = () => {
     setSubmittedQuery(query);
-    setLoading(!loading);
+    setLoading(false);
   };
 
   return (
     <VStack bgColor={"blackAlpha.300"} spacing={8} pb={12} minH={"100vh"}>
       <Navbar usePredefinedQuery={usePredefinedQuery} setValue={setValue} />
       <Stack
-        direction={["column", "row"]}
+        direction={["column", "column", "row"]}
         w={"100%"}
         justifyContent={"space-between"}
         px={4}
