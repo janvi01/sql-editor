@@ -41,6 +41,7 @@ function QueryHistory({ history, setQuery, setValue, setHistory }) {
         <IconButton
           icon={<MdDelete />}
           aria-label="Delete"
+          visibility={history.length === 0 ? "hidden" : "visible"}
           onClick={() => setHistory([])}
         ></IconButton>
       </HStack>
