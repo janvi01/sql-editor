@@ -46,10 +46,10 @@ const Editor = ({
 
   const SubmitQuery = () => {
     runQuery();
-    if (history.length === 0 || history[history.length - 1] !== value) {
+    if (history.length === 0 || history[0] !== value) {
     // If not, add it to history
-    setHistory((prevHistory) => [...prevHistory,value]);
-}
+    setHistory((prevHistory) => [value,...prevHistory]);
+    }
   };
 
   const errorQuery = () => {
