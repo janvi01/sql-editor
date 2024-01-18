@@ -1,8 +1,9 @@
-import { Text, HStack, Select, IconButton } from "@chakra-ui/react";
+import { Text, HStack, Select, IconButton, Spacer, Flex } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { BsArrowsFullscreen, BsFullscreenExit } from "react-icons/bs";
+import { FaHistory } from "react-icons/fa";
 
-function EditorTopControls({ setTheme, setWidth, setMaxLines }) {
+function EditorTopControls({ setTheme, isFullScreen, setIsFullScreen }) {
   const themes = [
     "sqlserver",
     "ambiance",
@@ -18,26 +19,27 @@ function EditorTopControls({ setTheme, setWidth, setMaxLines }) {
     "tomorrow",
     "xcode",
   ];
-  const [fullscreenBool, setfullscreenBool] = useState(true);
-  const fullscreen = (value) => {
-    if (value) {
-      setMaxLines(20);
-      setWidth("80%");
-    } else {
-      setMaxLines(10);
-      setWidth("70%");
-    }
+
+  const handleFullScreenToggle = () => {
+    setIsFullScreen(!isFullScreen);
   };
   return (
     <HStack w={"100%"} justifyContent={"space-between"} mb={2}>
-      <IconButton
-        aria-label="Fullscreen"
-        icon={fullscreenBool ? <BsArrowsFullscreen /> : <BsFullscreenExit />}
-        onClick={() => {
-          fullscreen(fullscreenBool);
-          setfullscreenBool(!fullscreenBool);
-        }}
-      ></IconButton>
+      <Flex w="100px">
+        <IconButton
+          aria-label="Fullscreen"
+          icon={!isFullScreen ? <BsArrowsFullscreen /> : <BsFullscreenExit />}
+          onClick={handleFullScreenToggle}
+        />
+        <Spacer />
+        {isFullScreen && (
+          <IconButton
+            aria-label="History"
+            icon={<FaHistory />}
+            onClick={handleFullScreenToggle}
+          />
+        )}
+      </Flex>
       <HStack>
         <Text fontWeight={"bold"}>Theme</Text>
         <Select
