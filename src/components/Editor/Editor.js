@@ -47,9 +47,9 @@ const Editor = ({
   const SubmitQuery = () => {
     runQuery();
     if (history.length === 0 || history[history.length - 1] !== value) {
-    // If not, add it to history
-    setHistory((prevHistory) => [...prevHistory,value]);
-}
+      // If not, add it to history
+      setHistory((prevHistory) => [value, ...prevHistory]);
+    }
   };
 
   const errorQuery = () => {
