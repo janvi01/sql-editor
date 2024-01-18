@@ -30,10 +30,22 @@ const Editor = ({
   value,
   setValue,
   setSubmittedQuery,
+  isFullScreen,
+  setIsFullScreen,
 }) => {
   const [theme, setTheme] = useState("sqlserver");
   const [width, setWidth] = useState("70%");
   const [maxLines, setMaxLines] = useState(10);
+
+  useEffect(() => {
+    if (isFullScreen) {
+      setMaxLines(20);
+      setWidth("100%");
+    } else {
+      setMaxLines(10);
+      setWidth("70%");
+    }
+  }, [isFullScreen]);
 
   const onChange = (newValue) => {
     setValue(newValue);
@@ -66,8 +78,8 @@ const Editor = ({
     <VStack w={{ base: "100%", md: width, lg: width }}>
       <EditorTopControls
         setTheme={setTheme}
-        setWidth={setWidth}
-        setMaxLines={setMaxLines}
+        isFullScreen={isFullScreen}
+        setIsFullScreen={setIsFullScreen}
       />
       <AceEditor
         mode="mysql"
