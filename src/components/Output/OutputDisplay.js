@@ -21,6 +21,7 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
   const [results, setResults] = useState([]);
   const [filename, setFilename] = useState("");
   const [queryTime, setQueryTime] = useState();
+  const [rowsAffected, setRowsAffected] = useState(0);
   const toast = useToast();
 
   useEffect(() => {
@@ -48,14 +49,18 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
   const selectResults = () => {
     if (submittedQuery === "") {
       setResults([]);
+      setRowsAffected(0);
       return;
     }
     const queryIndex = queryMap.findIndex((o) => o.query === submittedQuery);
     if (queryIndex === -1) {
       setResults([]);
+      setRowsAffected(0);
     } else {
-      setResults(queryMap[queryIndex].data);
-      setFilename(queryMap[queryIndex].tableQuery);
+        const queryData = queryMap[queryIndex].data;
+        setResults(queryData);
+        setFilename(queryMap[queryIndex].tableQuery);
+        setRowsAffected(queryData.length);
     }
   };
 
@@ -94,6 +99,9 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
               align={"center"}
               direction={["column-reverse", "row"]}
             >
+              <Button colorScheme="blue" mr={2} cursor={"initial"} size={"xs"}>
+                Rows Affected: {rowsAffected}
+              </Button>
               <Button colorScheme="blue" mr={2} cursor={"initial"} size={"xs"}>
                 Query took: {queryTime}
               </Button>
