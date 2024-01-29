@@ -36,6 +36,7 @@ const Editor = ({
   const [theme, setTheme] = useState("sqlserver");
   const [width, setWidth] = useState("70%");
   const [maxLines, setMaxLines] = useState(10);
+  const [fontSize, setFontSize] = useState(14);
 
   useEffect(() => {
     if (isFullScreen) {
@@ -80,6 +81,7 @@ const Editor = ({
         setTheme={setTheme}
         isFullScreen={isFullScreen}
         setIsFullScreen={setIsFullScreen}
+        setFontSize={setFontSize}
       />
       <AceEditor
         mode="mysql"
@@ -88,7 +90,7 @@ const Editor = ({
         name="editor"
         theme={theme}
         width="100%"
-        fontSize={20}
+        fontSize={fontSize}
         showPrintMargin={false}
         showGutter
         minLines={15}
