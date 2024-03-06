@@ -1,6 +1,6 @@
 import React, { useState, Suspense, lazy } from "react";
 import Editor from "../components/Editor/Editor";
-import { Stack, VStack, Flex, Spacer } from "@chakra-ui/react";
+import { Stack, VStack, Spacer } from "@chakra-ui/react";
 import Navbar from "../components/Navbar/Navbar";
 import QueryHistory from "../components/Queries/QueryHistory";
 
@@ -30,7 +30,7 @@ const FrontLayout = () => {
       <Navbar usePredefinedQuery={usePredefinedQuery} setValue={setValue} />
       <Stack w={"100%"} justifyContent={"space-between"} px={4} spacing={8}>
         {!isFullScreen && (
-          <Flex>
+          <Stack direction={["column", "row"]}>
             <QueryHistory
               history={history}
               setHistory={setHistory}
@@ -52,7 +52,7 @@ const FrontLayout = () => {
               isFullScreen={isFullScreen}
               setIsFullScreen={setIsFullScreen}
             />
-          </Flex>
+          </Stack>
         )}
         {isFullScreen && (
           <Editor
