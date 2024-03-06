@@ -1,9 +1,9 @@
 import { Text, HStack, Select, IconButton, Spacer, Flex } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React from "react";
 import { BsArrowsFullscreen, BsFullscreenExit } from "react-icons/bs";
 import { FaHistory } from "react-icons/fa";
 
-function EditorTopControls({ setTheme, isFullScreen, setIsFullScreen }) {
+function EditorTopControls({ setTheme, isFullScreen, setIsFullScreen, setFontSize }) {
   const themes = [
     "sqlserver",
     "ambiance",
@@ -20,6 +20,9 @@ function EditorTopControls({ setTheme, isFullScreen, setIsFullScreen }) {
     "xcode",
   ];
 
+  const fonts = [
+    14,16,18,20,22,24,26,28,30,32,34,36,
+  ];
   const handleFullScreenToggle = () => {
     setIsFullScreen(!isFullScreen);
   };
@@ -40,6 +43,25 @@ function EditorTopControls({ setTheme, isFullScreen, setIsFullScreen }) {
           />
         )}
       </Flex>
+      <HStack>
+        <Text fontWeight={"bold"}>Font Size</Text>
+        <Select
+          onChange={(m) => {
+            const a = m.target.value;
+            setFontSize(parseInt(a));
+          }}
+        >
+          <option defaultValue={20} disabled>
+            Select
+          </option>
+          {fonts.map((items, key) => (
+            <option key={key} value={items}>
+              {items}
+            </option>
+          ))}
+        </Select>
+      </HStack>
+
       <HStack>
         <Text fontWeight={"bold"}>Theme</Text>
         <Select
