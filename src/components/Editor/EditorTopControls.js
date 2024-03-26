@@ -1,5 +1,12 @@
-import { Text, HStack, Select, IconButton, Spacer, Flex } from "@chakra-ui/react";
-import React, { useState } from "react";
+import {
+  Text,
+  HStack,
+  Select,
+  IconButton,
+  Spacer,
+  Flex,
+} from "@chakra-ui/react";
+import React from "react";
 import { BsArrowsFullscreen, BsFullscreenExit } from "react-icons/bs";
 import { FaHistory } from "react-icons/fa";
 

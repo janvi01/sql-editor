@@ -57,10 +57,10 @@ const OutputDisplay = ({ submittedQuery, loading, setLoading }) => {
       setResults([]);
       setRowsAffected(0);
     } else {
-        const queryData = queryMap[queryIndex].data;
-        setResults(queryData);
-        setFilename(queryMap[queryIndex].tableQuery);
-        setRowsAffected(queryData.length);
+      const queryData = queryMap[queryIndex].data;
+      setResults(queryData);
+      setFilename(queryMap[queryIndex].tableQuery);
+      setRowsAffected(queryData.length);
     }
   };
 

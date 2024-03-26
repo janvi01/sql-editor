@@ -14,7 +14,6 @@ const FrontLayout = () => {
   const [loading, setLoading] = useState(true);
 
   const [isFullScreen, setIsFullScreen] = useState(false);
-  console.log("Fullscreen:", isFullScreen);
 
   const usePredefinedQuery = (value) => {
     setQuery(value);
