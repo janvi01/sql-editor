@@ -96,11 +96,6 @@ const Editor = ({
         placeholder="Write SQL query..."
         color="black"
         editorProps={{ $blockScrolling: true }}
-        setOptions={{
-          enableBasicAutocompletion: true,
-          enableLiveAutocompletion: true,
-          enableSnippets: true,
-        }}
         value={value}
         onChange={onChange}
         showLineNumbers

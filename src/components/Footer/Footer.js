@@ -10,7 +10,7 @@ function Footer() {
       bgColor={"teal"}
       textAlign="center"
       py={2}
-      color="#E7E6DA"
+      color="white"
       justify={"center"}
     >
       <Text fontSize="16">
@@ -20,7 +20,7 @@ function Footer() {
           href="https://github.com/janvi01"
           target="_blank"
           rightIcon={<BsGithub />}
-          colorScheme="blackAlpha"
+          color={"black"}
           fontWeight={"bold"}
           variant="link"
         >

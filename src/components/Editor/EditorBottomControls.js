@@ -17,7 +17,6 @@ const EditorBottomControls = ({
       justifyContent="space-between"
       w={"100%"}
       mt={2}
-      as={"div"}
     >
       <QueriesDrawer
         usePredefinedQuery={usePredefinedQuery}
@@ -25,7 +24,13 @@ const EditorBottomControls = ({
         setValue={setValue}
       />
       <Box>
-        <Input hidden type="file" ref={(el) => (fileInput = el)} />
+        <Input
+          hidden
+          id="import"
+          name="import"
+          type="file"
+          ref={(el) => (fileInput = el)}
+        />
         <Button
           onClick={() => fileInput.click()}
           leftIcon={<BsFillFileEarmarkArrowUpFill />}
@@ -36,7 +41,6 @@ const EditorBottomControls = ({
       </Box>
       <Spacer />
       <Button
-        as={"button"}
         leftIcon={<AiFillCaretRight />}
         colorScheme="blue"
         onClick={SubmitQuery}
