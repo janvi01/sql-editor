@@ -38,13 +38,8 @@ const Editor = ({
   const [maxLines, setMaxLines] = useState(10);
 
   useEffect(() => {
-    if (isFullScreen) {
-      setMaxLines(20);
-      setWidth("100%");
-    } else {
-      setMaxLines(10);
-      setWidth("70%");
-    }
+    setMaxLines(isFullScreen ? 20 : 10);
+    setWidth(isFullScreen ? "100%" : "70%");
   }, [isFullScreen]);
 
   const onChange = (newValue) => {

@@ -15,6 +15,7 @@ const FrontLayout = () => {
 
   const [isFullScreen, setIsFullScreen] = useState(false);
 
+  // function to set query values if it is chosen from available tables
   const usePredefinedQuery = (value) => {
     setQuery(value);
   };
